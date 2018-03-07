@@ -1,0 +1,6 @@
+framework module LinkPayLoanSDK {
+  umbrella header "LinkPayLoanSDK.h"
+
+  export *
+  module * { export * }
+}

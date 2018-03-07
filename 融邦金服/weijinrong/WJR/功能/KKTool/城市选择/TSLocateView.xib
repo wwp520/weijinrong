@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1" userLabel="LocateView" customClass="TSLocateView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_023.png" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="TitleView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="eDG-aa-Rnm"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="定位城市" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="TitleLabel">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="LocateButton">
+                    <rect key="frame" x="267" y="0.0" width="53" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6" secondAttribute="height" multiplier="1.2:1" id="wyJ-SW-ilq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" image="btn_020.png">
+                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" image="btn_020.disable.png"/>
+                    <state key="highlighted" image="btn_020.press.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="locate:" destination="1" eventType="touchUpInside" id="11"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="CancelButton">
+                    <rect key="frame" x="0.0" y="0.0" width="53" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5" secondAttribute="height" multiplier="1.2:1" id="xie-sk-fGl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" image="btn_021.png">
+                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" image="btn_021.disable.png"/>
+                    <state key="highlighted" image="btn_021.press.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cancel:" destination="1" eventType="touchUpInside" id="10"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3" userLabel="LocatePicker">
+                    <rect key="frame" x="0.0" y="44" width="320" height="216"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="KIi-Co-QJn"/>
+                    </constraints>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" red="0.20969468355178833" green="0.51669090986251831" blue="0.84347444772720337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6" firstAttribute="top" secondItem="4" secondAttribute="top" id="1UH-7W-iol"/>
+                <constraint firstItem="8" firstAttribute="top" secondItem="4" secondAttribute="top" id="95a-mp-Brw"/>
+                <constraint firstItem="5" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="DKF-Ih-ROe"/>
+                <constraint firstItem="5" firstAttribute="top" secondItem="4" secondAttribute="top" id="DkI-NJ-WkN"/>
+                <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="E82-dg-uSB"/>
+                <constraint firstItem="5" firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="FAv-GG-VEt"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="FsG-Ou-mqp"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="GV9-OD-0iZ"/>
+                <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="Gxt-4A-0uN"/>
+                <constraint firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="JcN-sm-PpJ"/>
+                <constraint firstItem="8" firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="PGd-Gw-X8U"/>
+                <constraint firstItem="6" firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="PPr-Ve-FJs"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="WrF-cG-lyh"/>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="4" secondAttribute="leading" id="aU9-Go-1jk"/>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="biQ-F1-oeJ"/>
+                <constraint firstItem="8" firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="hJn-4w-QSb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="locatePicker" destination="3" id="7"/>
+                <outlet property="titleLabel" destination="8" id="9"/>
+            </connections>
+            <point key="canvasLocation" x="-260" y="46"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_023.png" width="44" height="44"/>
+        <image name="btn_020.disable.png" width="42" height="42"/>
+        <image name="btn_020.png" width="42" height="42"/>
+        <image name="btn_020.press.png" width="42" height="42"/>
+        <image name="btn_021.disable.png" width="42" height="42"/>
+        <image name="btn_021.png" width="42" height="42"/>
+        <image name="btn_021.press.png" width="42" height="42"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

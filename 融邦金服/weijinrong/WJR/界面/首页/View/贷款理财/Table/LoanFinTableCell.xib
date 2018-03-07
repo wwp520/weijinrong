@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="LoanFinTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e0U-Yg-bv8">
+                        <rect key="frame" x="10" y="10" width="63" height="39.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="e0U-Yg-bv8" secondAttribute="height" multiplier="8:5" id="Kjd-HK-yNw"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6b-bU-NwT">
+                        <rect key="frame" x="10" y="54.5" width="63" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhu-M7-CT3">
+                        <rect key="frame" x="83" y="10" width="147" height="64.5"/>
+                        <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvO-Bx-ea7">
+                        <rect key="frame" x="240" y="26" width="70" height="28"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.29019607843137252" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="73D-Tn-Gsi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="我要理财">
+                            <color key="titleColor" red="0.989316387894419" green="0.9558962973718117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XvO-Bx-ea7" firstAttribute="leading" secondItem="Fhu-M7-CT3" secondAttribute="trailing" constant="10" id="GNj-IP-9rm"/>
+                    <constraint firstAttribute="trailing" secondItem="XvO-Bx-ea7" secondAttribute="trailing" constant="10" id="GdJ-p1-ucD"/>
+                    <constraint firstItem="XvO-Bx-ea7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MHe-di-FGZ"/>
+                    <constraint firstItem="e0U-Yg-bv8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TV8-5J-WX9"/>
+                    <constraint firstItem="v6b-bU-NwT" firstAttribute="leading" secondItem="e0U-Yg-bv8" secondAttribute="leading" id="Vfn-GU-yiI"/>
+                    <constraint firstItem="e0U-Yg-bv8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aEH-KQ-V06"/>
+                    <constraint firstItem="Fhu-M7-CT3" firstAttribute="leading" secondItem="e0U-Yg-bv8" secondAttribute="trailing" constant="10" id="cAo-xy-R4n"/>
+                    <constraint firstItem="Fhu-M7-CT3" firstAttribute="top" secondItem="e0U-Yg-bv8" secondAttribute="top" id="fog-HT-Mvs"/>
+                    <constraint firstItem="Fhu-M7-CT3" firstAttribute="bottom" secondItem="v6b-bU-NwT" secondAttribute="bottom" id="hGP-cw-QpT"/>
+                    <constraint firstAttribute="bottom" secondItem="v6b-bU-NwT" secondAttribute="bottom" constant="5" id="kqW-uB-qio"/>
+                    <constraint firstItem="v6b-bU-NwT" firstAttribute="trailing" secondItem="e0U-Yg-bv8" secondAttribute="trailing" id="uMj-4j-arR"/>
+                    <constraint firstAttribute="bottom" secondItem="e0U-Yg-bv8" secondAttribute="bottom" constant="30" id="vM0-Bj-ieO"/>
+                    <constraint firstItem="v6b-bU-NwT" firstAttribute="top" secondItem="e0U-Yg-bv8" secondAttribute="bottom" constant="5" id="x5E-j3-dy3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-250" y="36"/>
+        </tableViewCell>
+    </objects>
+</document>

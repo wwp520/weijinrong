@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransDetailCell" id="KGk-i7-Jjw" customClass="TransDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newPay_wei.png" translatesAutoresizingMaskIntoConstraints="NO" id="dMQ-Mr-DVf">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="5Qu-sI-LQG"/>
+                            <constraint firstAttribute="width" secondItem="dMQ-Mr-DVf" secondAttribute="height" multiplier="1:1" id="c5g-ck-8hR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="流水号 : 123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuR-kN-f2I">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额:200.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0M8-1A-Pxm">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:54:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueN-Ar-Gy1">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dMQ-Mr-DVf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5Bk-Ht-npK"/>
+                    <constraint firstItem="dMQ-Mr-DVf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="74k-In-e78"/>
+                    <constraint firstItem="SuR-kN-f2I" firstAttribute="centerY" secondItem="dMQ-Mr-DVf" secondAttribute="centerY" constant="-8" id="TvZ-62-cdB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0M8-1A-Pxm" secondAttribute="trailing" constant="8" id="Vgo-Jg-0ky"/>
+                    <constraint firstItem="ueN-Ar-Gy1" firstAttribute="top" secondItem="SuR-kN-f2I" secondAttribute="bottom" constant="2" id="dDf-hR-gY2"/>
+                    <constraint firstItem="ueN-Ar-Gy1" firstAttribute="leading" secondItem="SuR-kN-f2I" secondAttribute="leading" id="fWi-4P-UH1"/>
+                    <constraint firstItem="0M8-1A-Pxm" firstAttribute="bottom" secondItem="ueN-Ar-Gy1" secondAttribute="bottom" id="sv0-c6-7hN"/>
+                    <constraint firstItem="SuR-kN-f2I" firstAttribute="leading" secondItem="dMQ-Mr-DVf" secondAttribute="trailing" constant="8" id="wPF-fK-OQH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="date" destination="ueN-Ar-Gy1" id="L6B-Lz-PGR"/>
+                <outlet property="icon" destination="dMQ-Mr-DVf" id="3md-nA-bYm"/>
+                <outlet property="money" destination="0M8-1A-Pxm" id="qog-Wu-Us7"/>
+                <outlet property="number" destination="SuR-kN-f2I" id="SUV-Jh-JlY"/>
+            </connections>
+            <point key="canvasLocation" x="-900" y="-225"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="newPay_wei.png" width="57" height="57"/>
+    </resources>
+</document>

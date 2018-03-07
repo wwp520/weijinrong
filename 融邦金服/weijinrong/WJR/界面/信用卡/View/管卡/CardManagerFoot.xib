@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardManagerFoot"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Wc8-fo-4Jk" customClass="CardManagerFoot">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqb-5z-HeR">
+                    <rect key="frame" x="47.5" y="34" width="105" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="8ek-dX-OPM"/>
+                        <constraint firstAttribute="height" constant="35" id="rbB-Is-RP3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <state key="normal" title="添加信用卡">
+                        <color key="titleColor" red="1" green="0.092125669189999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addCardClick:" destination="-1" eventType="touchUpInside" id="WTd-s2-vBS"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-d5-UDP">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="10"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="6oV-YS-0KS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="oqb-5z-HeR" firstAttribute="centerX" secondItem="Wc8-fo-4Jk" secondAttribute="centerX" id="N0X-p6-1J9"/>
+                <constraint firstItem="Dsy-d5-UDP" firstAttribute="leading" secondItem="Wc8-fo-4Jk" secondAttribute="leading" id="V9D-K5-LKc"/>
+                <constraint firstItem="oqb-5z-HeR" firstAttribute="centerY" secondItem="Wc8-fo-4Jk" secondAttribute="centerY" constant="5" id="gsA-WM-ogS"/>
+                <constraint firstItem="Dsy-d5-UDP" firstAttribute="top" secondItem="Wc8-fo-4Jk" secondAttribute="top" id="np3-ka-3g5"/>
+                <constraint firstAttribute="trailing" secondItem="Dsy-d5-UDP" secondAttribute="trailing" id="o3L-wQ-8VV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-188" y="19"/>
+        </view>
+    </objects>
+</document>

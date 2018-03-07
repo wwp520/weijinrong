@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="144" id="KGk-i7-Jjw" customClass="HelpCell">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="144"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="416" height="143"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.扫码完成，为什么没有到账？1.1.扫码完成，为什么没有到账？？没" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6r-CT-z2n">
+                        <rect key="frame" x="25" y="34.5" width="371" height="38.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabel暗室逢灯卡萨发都发是考拉放假的LabelLabelLabel暗室逢灯卡萨发都发是考拉放假的" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfe-Uj-Sej">
+                        <rect key="frame" x="20" y="10" width="376" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="k6r-CT-z2n" firstAttribute="top" secondItem="vfe-Uj-Sej" secondAttribute="bottom" constant="5" id="CCI-Yx-6rh"/>
+                    <constraint firstItem="vfe-Uj-Sej" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Cgi-QR-h0U"/>
+                    <constraint firstItem="k6r-CT-z2n" firstAttribute="leading" secondItem="vfe-Uj-Sej" secondAttribute="leading" constant="5" id="OjW-o4-ePW"/>
+                    <constraint firstItem="vfe-Uj-Sej" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Pbi-Ot-0Wq"/>
+                    <constraint firstItem="vfe-Uj-Sej" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Wj1-bh-G3e"/>
+                    <constraint firstItem="k6r-CT-z2n" firstAttribute="trailing" secondItem="vfe-Uj-Sej" secondAttribute="trailing" id="ceS-Zx-hY9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="subTitleLb" destination="k6r-CT-z2n" id="0LU-EB-5n4"/>
+                <outlet property="titleLabel" destination="vfe-Uj-Sej" id="JQc-RX-Jz6"/>
+            </connections>
+            <point key="canvasLocation" x="82" y="116"/>
+        </tableViewCell>
+    </objects>
+</document>

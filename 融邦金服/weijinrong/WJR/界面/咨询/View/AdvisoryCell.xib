@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="AdvisoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="303" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="303" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huz-9n-Oik">
+                        <rect key="frame" x="99.5" y="10" width="193.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbK-uw-bxQ">
+                        <rect key="frame" x="99.5" y="34" width="193.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moren.png" translatesAutoresizingMaskIntoConstraints="NO" id="KdM-qV-svM">
+                        <rect key="frame" x="10" y="10" width="79.5" height="79.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="KdM-qV-svM" secondAttribute="height" multiplier="1:1" id="UzQ-rG-h9i"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tbK-uw-bxQ" firstAttribute="trailing" secondItem="huz-9n-Oik" secondAttribute="trailing" id="Fds-8m-ymx"/>
+                    <constraint firstItem="tbK-uw-bxQ" firstAttribute="top" secondItem="huz-9n-Oik" secondAttribute="bottom" constant="5" id="V2W-f1-4yj"/>
+                    <constraint firstItem="huz-9n-Oik" firstAttribute="leading" secondItem="KdM-qV-svM" secondAttribute="trailing" constant="10" id="amv-HB-tZ9"/>
+                    <constraint firstItem="KdM-qV-svM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="b3M-t1-LJf"/>
+                    <constraint firstItem="huz-9n-Oik" firstAttribute="top" secondItem="KdM-qV-svM" secondAttribute="top" id="cWi-An-hVj"/>
+                    <constraint firstAttribute="bottom" secondItem="KdM-qV-svM" secondAttribute="bottom" constant="10" id="d3Y-WY-dik"/>
+                    <constraint firstAttribute="trailing" secondItem="huz-9n-Oik" secondAttribute="trailing" constant="10" id="kON-b6-umW"/>
+                    <constraint firstItem="KdM-qV-svM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="lqD-oz-BLM"/>
+                    <constraint firstItem="tbK-uw-bxQ" firstAttribute="leading" secondItem="huz-9n-Oik" secondAttribute="leading" id="o1w-db-bbs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="tbK-uw-bxQ" id="ioO-aQ-E4i"/>
+                <outlet property="icon" destination="KdM-qV-svM" id="3Hu-0I-fb0"/>
+                <outlet property="title" destination="huz-9n-Oik" id="9A0-84-NTW"/>
+            </connections>
+            <point key="canvasLocation" x="-513" y="107"/>
+        </tableViewCell>
+        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moren.png" translatesAutoresizingMaskIntoConstraints="NO" id="97F-LY-2d1">
+            <rect key="frame" x="-0.25" y="-0.25" width="80" height="80"/>
+            <constraints>
+                <constraint firstAttribute="height" constant="79.5" id="3aC-MZ-JDz"/>
+                <constraint firstAttribute="width" constant="79.5" id="g3G-EW-fKV"/>
+            </constraints>
+            <point key="canvasLocation" x="-356" y="224"/>
+        </imageView>
+    </objects>
+    <resources>
+        <image name="moren.png" width="1024" height="723"/>
+    </resources>
+</document>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardEmailController">
+            <connections>
+                <outlet property="account" destination="LYN-zt-3O9" id="qzM-1K-118"/>
+                <outlet property="addBtn" destination="Ye2-tn-RSL" id="d92-Uy-nMX"/>
+                <outlet property="password" destination="ulp-kH-mWG" id="J1D-gF-rT7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYN-zt-3O9">
+                    <rect key="frame" x="30" y="94" width="260" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="h1o-2J-rYy"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-tn-RSL">
+                    <rect key="frame" x="30" y="274" width="260" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="确认导入">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addBtn:" destination="-1" eventType="touchUpInside" id="46w-8t-CJ5"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="QQ和网易邮箱输入授权码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-kH-mWG">
+                    <rect key="frame" x="30" y="159" width="260" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="若使用QQ或网易邮箱导入并提示“邮箱链接失败”，表明该邮箱账号没有授权，可通过如下链接开启邮箱授权码" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hj5-Tl-hWl">
+                    <rect key="frame" x="30" y="349" width="260" height="67"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="67" id="Q4E-5B-gLt"/>
+                    </constraints>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSi-kY-yX1">
+                    <rect key="frame" x="20" y="430" width="140" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="1jT-bF-Jtd"/>
+                        <constraint firstAttribute="height" constant="22" id="FQV-Ja-xmP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal" title="QQ邮箱授权码获取方式">
+                        <color key="titleColor" red="1" green="0.28412271639999997" blue="0.1889438779" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="GetQQ:" destination="-1" eventType="touchUpInside" id="Xw7-Q3-eIY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzZ-vG-Lhi">
+                    <rect key="frame" x="164" y="430" width="140" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="vc8-DW-x4N"/>
+                        <constraint firstAttribute="width" constant="140" id="z3b-if-sg4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal" title="网易邮箱授权码获取方式">
+                        <color key="titleColor" red="1" green="0.28412271639999997" blue="0.1889438779" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="GetWangYi:" destination="-1" eventType="touchUpInside" id="utY-Dv-ZDk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ulp-kH-mWG" firstAttribute="top" secondItem="LYN-zt-3O9" secondAttribute="bottom" constant="20" id="33C-jv-qzX"/>
+                <constraint firstItem="LYN-zt-3O9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="3x7-SO-8cX"/>
+                <constraint firstItem="Hj5-Tl-hWl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="6As-xs-Thh"/>
+                <constraint firstItem="Ye2-tn-RSL" firstAttribute="height" secondItem="ulp-kH-mWG" secondAttribute="height" id="7yo-3c-Xpf"/>
+                <constraint firstItem="ulp-kH-mWG" firstAttribute="leading" secondItem="LYN-zt-3O9" secondAttribute="leading" id="7zu-hD-uDh"/>
+                <constraint firstAttribute="trailing" secondItem="LYN-zt-3O9" secondAttribute="trailing" constant="30" id="8Ux-aA-2h6"/>
+                <constraint firstItem="Hj5-Tl-hWl" firstAttribute="top" secondItem="Ye2-tn-RSL" secondAttribute="bottom" constant="30" id="8qf-oy-geJ"/>
+                <constraint firstAttribute="trailing" secondItem="WzZ-vG-Lhi" secondAttribute="trailing" constant="16" id="Led-AM-5be"/>
+                <constraint firstItem="WzZ-vG-Lhi" firstAttribute="top" secondItem="Hj5-Tl-hWl" secondAttribute="bottom" constant="14" id="OW0-Wb-wQy"/>
+                <constraint firstItem="Ye2-tn-RSL" firstAttribute="trailing" secondItem="ulp-kH-mWG" secondAttribute="trailing" id="Onx-EU-a5L"/>
+                <constraint firstItem="LYN-zt-3O9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="dNf-Ol-DTj"/>
+                <constraint firstItem="ulp-kH-mWG" firstAttribute="trailing" secondItem="LYN-zt-3O9" secondAttribute="trailing" id="g1J-Re-fXD"/>
+                <constraint firstItem="Ye2-tn-RSL" firstAttribute="top" secondItem="ulp-kH-mWG" secondAttribute="bottom" constant="70" id="hpT-ka-HuI"/>
+                <constraint firstItem="JSi-kY-yX1" firstAttribute="top" secondItem="Hj5-Tl-hWl" secondAttribute="bottom" constant="14" id="k28-4q-Fvl"/>
+                <constraint firstAttribute="trailing" secondItem="Hj5-Tl-hWl" secondAttribute="trailing" constant="30" id="lCY-jN-4l7"/>
+                <constraint firstItem="Ye2-tn-RSL" firstAttribute="leading" secondItem="ulp-kH-mWG" secondAttribute="leading" id="mAd-sM-47n"/>
+                <constraint firstItem="ulp-kH-mWG" firstAttribute="height" secondItem="LYN-zt-3O9" secondAttribute="height" id="yHo-pB-uH4"/>
+                <constraint firstItem="JSi-kY-yX1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ypf-lt-t7L"/>
+            </constraints>
+            <point key="canvasLocation" x="-455" y="-104"/>
+        </view>
+    </objects>
+</document>

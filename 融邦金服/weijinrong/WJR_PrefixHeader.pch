@@ -1,0 +1,51 @@
+//
+//  WJR_PrefixHeader.pch
+//  weijinrong
+//
+//  Created by RY on 17/3/29.
+//  Copyright © 2017年 oudapay. All rights reserved.
+//
+
+#ifndef WJR_PrefixHeader_pch
+#define WJR_PrefixHeader_pch
+
+#define ScreenBounds [UIScreen mainScreen].bounds
+#define ScreenSize   [UIScreen mainScreen].bounds.size
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define RGB(a,b,c,d) [UIColor colorWithRed:a/255.f green:b/255.f blue:c/255.f alpha:d]
+
+//#define KHost @"http://123.59.106.50:8088/sendmanage/"   //测试
+#define KHost @"http://wx.oudapay.com:8054/sendmanage/"   //生产
+//#define KHost @"http://223.98.189.173:8080/sendmanage/"   //本地
+
+#import "Common.h"
+
+// 审核
+#define SHENHE_NUMBER @"1"      //当前审核: 1
+#define SHENHE_DATE 20180402    //预计审核通过时间
+
+
+
+// 友盟账号
+//#define UMeng_KEY @"58f03f34c895760395000b98" // 自己申请的
+#define UMeng_KEY @"5861e5daf5ade41326001eab"   // 友盟测试的
+// 百度地图
+#define BAIDU_KEY @"b7fGYyG7YAUlUxQqCdsZj0QFBwxY2W2a"
+// 友盟分享key
+#define SHARE_KEY @"1e2199510e388"
+// 友盟推送
+#define PUSH_KEY  @"5943c795f43e487aa30013e6"
+// 通道编号
+#define ChannelNumber @"100249"
+// 主流颜色
+#define StreamColor RGB(255, 80, 51, 1)
+
+#define UMeng_total_KEY  @"595c602ecae7e76a29000572"
+
+//分享注册地址
+#define QRURL [NSString stringWithFormat:@"http://wx.oudapay.com/online_payment/pay/wechatOrder/weChatRedirect?mercId=%@",[SaveManager getStringForKey:@"mercId"]]
+
+
+
+#endif

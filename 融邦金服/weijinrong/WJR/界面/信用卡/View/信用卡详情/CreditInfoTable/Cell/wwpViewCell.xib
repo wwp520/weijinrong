@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="KGk-i7-Jjw" customClass="wwpViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="396" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-u7-C9c">
+                        <rect key="frame" x="20" y="0.0" width="93" height="75.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="面包世说新语" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD1-PZ-rTy">
+                        <rect key="frame" x="123" y="0.0" width="150" height="75.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="nB2-gf-97R"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="451.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-TC-F9g">
+                        <rect key="frame" x="334" y="0.0" width="42" height="75.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ytQ-TC-F9g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EO7-uk-wYv"/>
+                    <constraint firstItem="Udp-u7-C9c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OoU-zb-0JD"/>
+                    <constraint firstAttribute="trailing" secondItem="ytQ-TC-F9g" secondAttribute="trailing" constant="20" id="VCg-WW-sqT"/>
+                    <constraint firstAttribute="bottom" secondItem="hD1-PZ-rTy" secondAttribute="bottom" id="Xa6-qD-wvl"/>
+                    <constraint firstAttribute="bottom" secondItem="ytQ-TC-F9g" secondAttribute="bottom" id="dBu-d9-U1I"/>
+                    <constraint firstItem="hD1-PZ-rTy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="m0S-G7-F6w"/>
+                    <constraint firstItem="hD1-PZ-rTy" firstAttribute="leading" secondItem="Udp-u7-C9c" secondAttribute="trailing" constant="10" id="nrP-e9-Vta"/>
+                    <constraint firstItem="hD1-PZ-rTy" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="tDV-1C-Pck"/>
+                    <constraint firstAttribute="bottom" secondItem="Udp-u7-C9c" secondAttribute="bottom" id="z46-2t-5Wx"/>
+                    <constraint firstItem="Udp-u7-C9c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="zfh-d8-AAL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amount" destination="ytQ-TC-F9g" id="Yoj-S9-g2C"/>
+                <outlet property="merchantName" destination="hD1-PZ-rTy" id="pDE-X7-le1"/>
+                <outlet property="tradeDate" destination="Udp-u7-C9c" id="Slu-nK-m1g"/>
+            </connections>
+            <point key="canvasLocation" x="-76" y="-11"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,18 @@
+//
+//  CardSelectController.h
+//  weijinrong
+//
+//  Created by ouda on 17/6/10.
+//  Copyright © 2017年 oudapay. All rights reserved.
+//
+
+#import "BaseViewController.h"
+#import "RewardBankModel.h"
+
+typedef void (^KKBankModel)(RewardBankListModel *model);
+
+@interface CardSelectController : BaseViewController
+
+@property(nonatomic,copy) KKBankModel modelBlock;
+
+@end

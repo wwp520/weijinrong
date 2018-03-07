@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewMyQrViewController">
+            <connections>
+                <outlet property="bigIcon" destination="ze4-aS-Gfi" id="xEI-Qd-Zpi"/>
+                <outlet property="icon" destination="a5U-O3-CuU" id="HRb-WV-d0E"/>
+                <outlet property="phone" destination="W0e-Ny-qzg" id="jAD-PW-6Vz"/>
+                <outlet property="qrImg" destination="3uv-ax-R80" id="HNh-Hg-1qK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qek-GX-HJW">
+                    <rect key="frame" x="40" y="144" width="295" height="339"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qricon.png" translatesAutoresizingMaskIntoConstraints="NO" id="a5U-O3-CuU">
+                            <rect key="frame" x="10" y="8" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="a5U-O3-CuU" secondAttribute="height" multiplier="1:1" id="9ut-oQ-J56"/>
+                                <constraint firstAttribute="width" constant="40" id="NN1-O2-DwS"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-Ny-qzg">
+                            <rect key="frame" x="58" y="18" width="8" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3uv-ax-R80">
+                            <rect key="frame" x="10" y="56" width="275" height="275"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3uv-ax-R80" secondAttribute="height" multiplier="1:1" id="5oy-0C-xmg"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qricon.png" translatesAutoresizingMaskIntoConstraints="NO" id="ze4-aS-Gfi">
+                            <rect key="frame" x="115" y="161" width="65" height="65"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="65" id="9cc-4Y-f37"/>
+                                <constraint firstAttribute="width" secondItem="ze4-aS-Gfi" secondAttribute="height" multiplier="1:1" id="KQZ-UG-wnj"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3uv-ax-R80" secondAttribute="bottom" constant="8" id="2Gk-HU-cgM"/>
+                        <constraint firstItem="ze4-aS-Gfi" firstAttribute="centerX" secondItem="3uv-ax-R80" secondAttribute="centerX" id="2QY-xe-esc"/>
+                        <constraint firstItem="3uv-ax-R80" firstAttribute="top" secondItem="a5U-O3-CuU" secondAttribute="bottom" constant="8" id="8LY-L1-esF"/>
+                        <constraint firstItem="W0e-Ny-qzg" firstAttribute="centerY" secondItem="a5U-O3-CuU" secondAttribute="centerY" id="Cej-0F-NB1"/>
+                        <constraint firstItem="3uv-ax-R80" firstAttribute="leading" secondItem="Qek-GX-HJW" secondAttribute="leading" constant="10" id="M4f-Lh-6ho"/>
+                        <constraint firstItem="W0e-Ny-qzg" firstAttribute="leading" secondItem="a5U-O3-CuU" secondAttribute="trailing" constant="8" id="Nig-NT-yhn"/>
+                        <constraint firstItem="a5U-O3-CuU" firstAttribute="top" secondItem="Qek-GX-HJW" secondAttribute="top" constant="8" id="UHA-Iu-LT3"/>
+                        <constraint firstItem="ze4-aS-Gfi" firstAttribute="centerY" secondItem="3uv-ax-R80" secondAttribute="centerY" id="WUG-Vo-IbK"/>
+                        <constraint firstItem="a5U-O3-CuU" firstAttribute="leading" secondItem="Qek-GX-HJW" secondAttribute="leading" constant="10" id="nO2-rl-x0w"/>
+                        <constraint firstAttribute="trailing" secondItem="3uv-ax-R80" secondAttribute="trailing" constant="10" id="qcm-PX-nax"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Qek-GX-HJW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="BM5-qs-efp"/>
+                <constraint firstItem="Qek-GX-HJW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h3N-sT-zgO"/>
+                <constraint firstItem="Qek-GX-HJW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="tMl-PL-G9P"/>
+            </constraints>
+            <point key="canvasLocation" x="-410" y="46"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qricon.png" width="180" height="180"/>
+    </resources>
+</document>
