@@ -19,6 +19,11 @@
 #define KHost @"http://wx.oudapay.com:8054/sendmanage/"   //生产
 //#define KHost @"http://223.98.189.173:8080/sendmanage/"   //本地
 
+
+/******************H5生产地址******************/
+#define WHost  @"http://pms.oudapay.com:8059/ouda_pms/PmsCreditInfo/bankcard.action?" //卡种链接   生产
+
+
 #import "Common.h"
 
 // 审核

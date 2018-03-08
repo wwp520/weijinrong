@@ -35,6 +35,10 @@
 @property(nonatomic,strong)NSMutableArray<CardBenifitListModel *> * dataArray;
 @property (nonatomic,strong) NSString * weburl;
 @property (nonatomic,strong) NSString * guangdaUrl;
+@property (nonatomic,strong) NSString * pufaUrl;
+@property (nonatomic,strong) NSString * zhongxinUrl;
+@property (nonatomic,strong) NSString * xingyeUrl;
+@property (nonatomic,strong) NSString * minshengUrl;
 @end
 
 @implementation CreditUsedViewController
@@ -164,14 +168,12 @@
         }
         if (_cardLevel) {
             [dict setObject:_cardLevel forKey:@"cardLevel"];
+            
         }
         
         //综合
-        _weburl = [NSString stringWithFormat:@"http://223.98.189.173:8081/ouda_pms/PmsCreditInfo/bankcard.action?mobile=%@&banktype=%@&cardlevel=%@&cardtype=%@",GetAccount,_bankNo,_cardLevel,_cardType];
+        _weburl = [NSString stringWithFormat:@"%@mobile=%@&banktype=%@&cardlevel=%@&cardtype=%@",WHost,GetAccount,_bankNo,_cardLevel,_cardType];
         
-        //光大
-       // _guangdaUrl = [NSString stringWithFormat:@"http://223.98.189.173:8081/ouda_pms/PmsCreditInfo/bankcard.action?mobile=%@&banktype=%@&pid=%@",GetAccount,_bankNo,];
-
         
         NSString *str = [KKTools dictionaryToJson:dict];  //类型
         [KKTools encryptionJsonString:str];
@@ -260,10 +262,20 @@
         cell.name.text = model.title;
         
         //光大
-        _guangdaUrl = [NSString stringWithFormat:@"http://223.98.189.173:8081/ouda_pms/PmsCreditInfo/bankcard.action?mobile=%@&banktype=%@&pid=%@",GetAccount,_bankNo,model.id];
-    
+        _guangdaUrl = [NSString stringWithFormat:@"%@banktype=%@&mobile=%@&pid=%@",WHost,_bankNo,GetAccount,model.id];
         
-      //  [cell.applyBtn addTarget:self action:@selector(applyBtn:) forControlEvents:UIControlEventTouchUpInside];
+        //民生
+        _minshengUrl = [NSString stringWithFormat:@"%@banktype=%@&mobile=%@&pid=%@",WHost,_bankNo,GetAccount,model.id];
+        
+        //浦发
+        _pufaUrl = [NSString stringWithFormat:@"%@banktype=%@&mobile=%@&pid=%@",WHost,_bankNo,GetAccount,model.id];
+        
+        //中信
+        _zhongxinUrl = [NSString stringWithFormat:@"%@banktype=%@&mobile=%@&pid=%@",WHost,_bankNo,GetAccount,model.id];
+        
+        //兴业
+        _xingyeUrl = [NSString stringWithFormat:@"%@banktype=%@&mobile=%@&pid=%@",WHost,_bankNo,GetAccount,model.id];
+        
         
         [cell.shareBtn addTarget:self action:@selector(shareBtn:) forControlEvents:UIControlEventTouchUpInside];
     }
