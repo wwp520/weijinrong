@@ -200,7 +200,7 @@
             CreditHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CreditHeader" forIndexPath:indexPath];
             [headerView.name setText:@[@"",@"银行通道",@"推荐办卡",@"精卡推荐",@"用途卡精选",@"卡惠精选"][indexPath.section]];
             [headerView haveMorebtn:(indexPath.section == 5 || indexPath.section == 1)];
-            headerView.bankNo = _modell.bank[indexPath.row].bankName;
+          //  headerView.bankNo = _modell.bank[indexPath.row].bankNo;
             [headerView setBtnTag:indexPath.section];
             return headerView;
         }

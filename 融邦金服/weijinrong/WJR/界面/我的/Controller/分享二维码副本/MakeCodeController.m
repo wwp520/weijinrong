@@ -91,6 +91,7 @@
     }];
 
 }
+
 // 新增
 - (void)add {
     
@@ -101,12 +102,6 @@
                                 _scaleTF.text,@"profit",nil]];
         [KKTools encryptionJsonString:str];
     })];
-//    NSDictionary *params2 = [[NSDictionary alloc] initWithObjectsAndKeys:
-//                             GetAccount, @"userName",
-//                             @"PmsCreditInfoAction/insertRecommend.action",@"url",
-//                             [SaveManager getStringForKey:@"token"],@"token",
-//                             [SaveManager getStringForKey:@"session"],@"session",
-//                             oldParam,@"inParam",nil];
     
     
     [DongManager shareQRAdd:oldParam success:^(id requestData) {
@@ -123,6 +118,7 @@
         [self showNetFail];
     }];
 }
+
 // 点击保存
 - (IBAction)saveBtnClick:(UIButton *)sender {
     if (_scaleTF.text.length == 0) {
@@ -143,6 +139,7 @@
         }
     }
 }
+
 // 设置数据
 - (void)setModel:(ShareCodeListSubModel *)model {
     _model = model;

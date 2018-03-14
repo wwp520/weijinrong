@@ -119,24 +119,30 @@
     cell.textLabel.text = _model.list[indexPath.row].profit;
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MakeCodeController * VC = [[MakeCodeController alloc]init];
     VC.model = _model.list[indexPath.row];
     [self.navigationController  pushViewController:VC animated:YES];
 }
+
+#pragma mark--侧滑删除
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewCellEditingStyleDelete;
 }
+
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"删除";
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         ShareCodeListSubModel *model = _model.list[indexPath.row];
+        //请求接口
         [self delete:model];
     }
 }

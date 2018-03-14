@@ -99,32 +99,21 @@
     return _header;
 }
 
-// 获取用户状态(不好使)
+// 获取用户状态
 - (void)getUserStatus {
     
     [DongManager getUserStatus:^(id requestData) {
         UserModel *model = [UserModel decryptBecomeModel:requestData];
         if (model.retCode == 0) {
             //认证过
-//                if ([model.mercSts isEqualToString:@"60"] || [model.mercSts isEqualToString:@"30"]) {//认证
-//                    [_header.statusBtn setImage:[UIImage imageNamed:@"已认证"] forState:UIControlStateNormal];
-//                }else if([model.mercSts isEqualToString:@"10"]){ //未认证
-//                    [_header.statusBtn setImage:[UIImage imageNamed:@"未认证.png"] forState:UIControlStateNormal];
-//                }
-//                else {   //认证中30
-//                    [_header.statusBtn setImage:[UIImage imageNamed:@"认证中.png"] forState:UIControlStateNormal];
-//                }
-            
             if([model.mercSts isEqualToString:@"10"]){ //未认证
                 [_header.statusBtn setImage:[UIImage imageNamed:@"未认证.png"] forState:UIControlStateNormal];
                 [_header.statusBtn addTarget:self action:@selector(StatusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
                 
             }else {//认证
                     [_header.statusBtn setImage:[UIImage imageNamed:@"已认证"] forState:UIControlStateNormal];
-             
             }
         }else {
-//            [self showTitle:@"失败" delay:1.5f];
             [self showNetFail];
         }
     } fail:^(NSError *error) {

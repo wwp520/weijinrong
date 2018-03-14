@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="ZYPTView" customClass="ZYPTView">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="42"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEZ-Hf-UFd">
+                    <rect key="frame" x="30" y="-1" width="107" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="107" id="0d5-mu-0LL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <state key="normal" title="信用卡">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-Zh-9dF">
+                    <rect key="frame" x="204" y="-1" width="107" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="107" id="oDK-am-xgX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <state key="normal" title="贷款">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="changeClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="nvO-Da-gTE"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-Ej-T4Z">
+                    <rect key="frame" x="50" y="36" width="66" height="4"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="Bh5-aj-RiQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Yo-Zh-9dF" firstAttribute="firstBaseline" secondItem="pEZ-Hf-UFd" secondAttribute="baseline" id="00T-yT-FDX"/>
+                <constraint firstAttribute="trailing" secondItem="A1S-Ej-T4Z" secondAttribute="trailing" constant="225" id="Jey-YJ-23t"/>
+                <constraint firstItem="8Yo-Zh-9dF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qfg-9n-XPG"/>
+                <constraint firstAttribute="trailing" secondItem="8Yo-Zh-9dF" secondAttribute="trailing" constant="30" id="cxo-xZ-4aW"/>
+                <constraint firstItem="8Yo-Zh-9dF" firstAttribute="top" secondItem="pEZ-Hf-UFd" secondAttribute="top" id="fGQ-t5-qui"/>
+                <constraint firstItem="8Yo-Zh-9dF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-1" id="jDK-lB-WFG"/>
+                <constraint firstItem="A1S-Ej-T4Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="jwD-OJ-Asf"/>
+                <constraint firstItem="A1S-Ej-T4Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="v3R-GQ-GeS"/>
+                <constraint firstItem="pEZ-Hf-UFd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="wUM-fl-naV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="line" destination="A1S-Ej-T4Z" id="I0H-NW-Ube"/>
+            </connections>
+            <point key="canvasLocation" x="28.5" y="-112"/>
+        </view>
+    </objects>
+</document>

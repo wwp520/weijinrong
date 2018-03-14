@@ -37,11 +37,5 @@
     }
 }
 
-//认证状态 
-- (IBAction)statusBtn:(id)sender {
-    
-    
-}
-
 
 @end

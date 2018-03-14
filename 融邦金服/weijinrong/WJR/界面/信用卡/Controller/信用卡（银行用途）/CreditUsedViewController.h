@@ -13,6 +13,8 @@
 
 @interface CreditUsedViewController : BaseViewController
 
+
+
 @property(nonatomic,assign) NSInteger type;
 @property(nonatomic,strong) NSString *bankNo;
 @property(nonatomic,strong) NSString *cardType;

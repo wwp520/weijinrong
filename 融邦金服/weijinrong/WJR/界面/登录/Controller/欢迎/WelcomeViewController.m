@@ -38,12 +38,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self toLoginViewController];
-    
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden=YES;
 }
+
 - (void)toLoginViewController {
     
     if(!isFirstLogin && ![ShenHe isShenHeDate]){
@@ -89,11 +90,13 @@
     self.scrollView.contentSize = CGSizeMake(ScreenWidth * array.count, ScreenHeight);
     return self.scrollView;
 }
+
 - (void)poseView {
    [KKTools becomeTabController];
 //    LoginController *lvc = [[LoginController alloc]init];
 //    [self.navigationController pushViewController:lvc animated:NO];
 }
+
 - (void)poseView:(UITapGestureRecognizer*)recognizer {
     [KKTools becomeTabController];
 //    LoginController *lvc = [[LoginController alloc]init];

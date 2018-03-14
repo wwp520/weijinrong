@@ -44,7 +44,7 @@
 - (IBAction)moreClick:(UIButton *)sender {
     if (sender.tag == 1) {
         CreditUsedViewController *VC  = [[CreditUsedViewController alloc]init];
-        VC.bankNo = self.bankNo;
+      //  VC.bankNo = self.bankNo;
         [self.viewController.navigationController  pushViewController:VC animated:YES];
         
     }else if (sender.tag == 5) {

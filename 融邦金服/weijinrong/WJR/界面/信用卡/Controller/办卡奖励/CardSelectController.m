@@ -70,6 +70,7 @@
         [self showNetFail];
     }];
 }
+
 // 删除银行卡
 - (void)deleteBank:(NSIndexPath *)indexPath {
     RewardBankListModel *model = _model.list[indexPath.row];
@@ -153,7 +154,7 @@
 }
 
 
-
+#pragma mark--侧滑效果及功能
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == _model.list.count) {
         return UITableViewCellEditingStyleNone;

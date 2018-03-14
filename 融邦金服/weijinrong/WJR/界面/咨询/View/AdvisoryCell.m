@@ -24,8 +24,6 @@
 + (instancetype)loadWithTable1:(UITableView *)table {
     AdvisoryCell *cell = [AdvisoryCell loadWithTable:table];
     return cell;
-   
-    
 }
 
 - (void)setModel:(CardWelfareListModel *)model {

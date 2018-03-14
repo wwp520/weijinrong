@@ -85,10 +85,7 @@
     }else {
         [self.window setRootViewController:[[BaseNavigationController alloc] initWithRootViewController:[[WelcomeController alloc] init]]];
     }
-    
-    
 }
-
 
 
 

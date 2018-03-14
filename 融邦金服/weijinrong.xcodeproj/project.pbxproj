@@ -728,6 +728,11 @@
 		80E0E1011EF688A000D4480B /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 80E0E1001EF688A000D4480B /* msg.png */; };
 		80E8F824204D1D35009028DE /* RBJFHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E8F822204D1D35009028DE /* RBJFHeader.m */; };
 		80E8F825204D1D35009028DE /* RBJFHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E8F823204D1D35009028DE /* RBJFHeader.xib */; };
+		80E9914C2057772400CB7203 /* ZYPTController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E991482057772400CB7203 /* ZYPTController.xib */; };
+		80E9914D2057772400CB7203 /* ZYPTController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E991492057772400CB7203 /* ZYPTController.m */; };
+		80E991522057777B00CB7203 /* ZYPTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E991512057777B00CB7203 /* ZYPTView.m */; };
+		80E991542057778900CB7203 /* ZYPTView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E991532057778900CB7203 /* ZYPTView.xib */; };
+		80E9915720577CE700CB7203 /* ZYTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E9915620577CE700CB7203 /* ZYTable.m */; };
 		80ED6F501F033CA1007E54A3 /* newReg_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ED6F4F1F033CA1007E54A3 /* newReg_menu@2x.png */; };
 		80ED6F521F033CA6007E54A3 /* newReg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 80ED6F511F033CA6007E54A3 /* newReg_menu.png */; };
 		80ED700A1F038185007E54A3 /* LinkPayBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80ED70081F038185007E54A3 /* LinkPayBundle.bundle */; };
@@ -834,6 +839,8 @@
 		80F4B97A1EF2F96B00AB0308 /* money_new_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F4B96E1EF2F96B00AB0308 /* money_new_phone@3x.png */; };
 		80F4B97B1EF2F96B00AB0308 /* money_new_Uzu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F4B96F1EF2F96B00AB0308 /* money_new_Uzu@2x.png */; };
 		80F4B97C1EF2F96B00AB0308 /* money_new_Uzu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F4B9701EF2F96B00AB0308 /* money_new_Uzu@3x.png */; };
+		80FBAB462058BAF900450709 /* ZYPTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FBAB442058BAF900450709 /* ZYPTCell.m */; };
+		80FBAB472058BAF900450709 /* ZYPTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FBAB452058BAF900450709 /* ZYPTCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1847,6 +1854,14 @@
 		80E8F821204D1D35009028DE /* RBJFHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBJFHeader.h; sourceTree = "<group>"; };
 		80E8F822204D1D35009028DE /* RBJFHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBJFHeader.m; sourceTree = "<group>"; };
 		80E8F823204D1D35009028DE /* RBJFHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBJFHeader.xib; sourceTree = "<group>"; };
+		80E991472057772400CB7203 /* ZYPTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPTController.h; sourceTree = "<group>"; };
+		80E991482057772400CB7203 /* ZYPTController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYPTController.xib; sourceTree = "<group>"; };
+		80E991492057772400CB7203 /* ZYPTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPTController.m; sourceTree = "<group>"; };
+		80E991502057777B00CB7203 /* ZYPTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPTView.h; sourceTree = "<group>"; };
+		80E991512057777B00CB7203 /* ZYPTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPTView.m; sourceTree = "<group>"; };
+		80E991532057778900CB7203 /* ZYPTView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYPTView.xib; sourceTree = "<group>"; };
+		80E9915520577CE700CB7203 /* ZYTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTable.h; sourceTree = "<group>"; };
+		80E9915620577CE700CB7203 /* ZYTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTable.m; sourceTree = "<group>"; };
 		80ED6F4F1F033CA1007E54A3 /* newReg_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newReg_menu@2x.png"; sourceTree = "<group>"; };
 		80ED6F511F033CA6007E54A3 /* newReg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newReg_menu.png; sourceTree = "<group>"; };
 		80ED70081F038185007E54A3 /* LinkPayBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LinkPayBundle.bundle; sourceTree = "<group>"; };
@@ -1968,6 +1983,9 @@
 		80F4B96E1EF2F96B00AB0308 /* money_new_phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_new_phone@3x.png"; sourceTree = "<group>"; };
 		80F4B96F1EF2F96B00AB0308 /* money_new_Uzu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_new_Uzu@2x.png"; sourceTree = "<group>"; };
 		80F4B9701EF2F96B00AB0308 /* money_new_Uzu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_new_Uzu@3x.png"; sourceTree = "<group>"; };
+		80FBAB432058BAF900450709 /* ZYPTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYPTCell.h; sourceTree = "<group>"; };
+		80FBAB442058BAF900450709 /* ZYPTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYPTCell.m; sourceTree = "<group>"; };
+		80FBAB452058BAF900450709 /* ZYPTCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYPTCell.xib; sourceTree = "<group>"; };
 		D751E76C6A5F60AF4E7E2800 /* Pods_weijinrong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weijinrong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC5692F62517689479BF1FE /* Pods-weijinrong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weijinrong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weijinrong/Pods-weijinrong.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -3136,6 +3154,7 @@
 		12ACA8B71E8B43CC00AF74FC /* 界面 */ = {
 			isa = PBXGroup;
 			children = (
+				80E99140205770EC00CB7203 /* 展业平台 */,
 				80F056D91F0CAF2A00A32051 /* 友盟统计 */,
 				80E0E0F11EF684B900D4480B /* 通知 */,
 				12ACA8C81E8B443D00AF74FC /* Base */,
@@ -3437,6 +3456,7 @@
 		12ACA8CB1E8B443D00AF74FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				80E9913F205770BB00CB7203 /* 展业平台 */,
 				126908FA1EF18CD6007B7C5C /* CTLoadingView.h */,
 				126908FB1EF18CD6007B7C5C /* CTLoadingView.m */,
 				12ACA8DB1E8B448500AF74FC /* BaseView.h */,
@@ -4462,6 +4482,55 @@
 			path = "通知";
 			sourceTree = "<group>";
 		};
+		80E9913F205770BB00CB7203 /* 展业平台 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "展业平台";
+			sourceTree = "<group>";
+		};
+		80E99140205770EC00CB7203 /* 展业平台 */ = {
+			isa = PBXGroup;
+			children = (
+				80E991462057772400CB7203 /* Controller */,
+				80E9914A2057772400CB7203 /* model */,
+				80E9914B2057772400CB7203 /* View */,
+			);
+			path = "展业平台";
+			sourceTree = "<group>";
+		};
+		80E991462057772400CB7203 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80E991472057772400CB7203 /* ZYPTController.h */,
+				80E991492057772400CB7203 /* ZYPTController.m */,
+				80E991482057772400CB7203 /* ZYPTController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		80E9914A2057772400CB7203 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		80E9914B2057772400CB7203 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80E991502057777B00CB7203 /* ZYPTView.h */,
+				80E991512057777B00CB7203 /* ZYPTView.m */,
+				80E991532057778900CB7203 /* ZYPTView.xib */,
+				80E9915520577CE700CB7203 /* ZYTable.h */,
+				80E9915620577CE700CB7203 /* ZYTable.m */,
+				80FBAB432058BAF900450709 /* ZYPTCell.h */,
+				80FBAB442058BAF900450709 /* ZYPTCell.m */,
+				80FBAB452058BAF900450709 /* ZYPTCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		80ED70071F038185007E54A3 /* LinkPayLoanSDk */ = {
 			isa = PBXGroup;
 			children = (
@@ -4908,6 +4977,7 @@
 				12A8D8101EB33A51007EF391 /* red.png in Resources */,
 				12B523C01EF64A03004EBE8E /* HomeSlider.xib in Resources */,
 				12607C4F1E97448200F6BDC8 /* CardEmailController.xib in Resources */,
+				80FBAB472058BAF900450709 /* ZYPTCell.xib in Resources */,
 				80F4B9771EF2F96B00AB0308 /* money_new_pack@2x.png in Resources */,
 				1282AA6C1E9B79E70093B88F /* icon_Information@2x.png in Resources */,
 				80C713CF1ED94AF3005274A9 /* 资源 31@2x.png in Resources */,
@@ -4957,6 +5027,7 @@
 				809215681F00B8C7007BB778 /* 1feijipiao.png in Resources */,
 				12A508FD1EF15A750073E2EC /* TransDetailCell.xib in Resources */,
 				12B523C21EF64A03004EBE8E /* HomeSliderCell.xib in Resources */,
+				80E991542057778900CB7203 /* ZYPTView.xib in Resources */,
 				80F4B8EE1EF2F07F00AB0308 /* cat_2@2x.png in Resources */,
 				12A8D7F21EB339C7007EF391 /* newPay_alipy.png in Resources */,
 				80C713D71ED94AF4005274A9 /* 资源 34@0.5x.png in Resources */,
@@ -5184,6 +5255,7 @@
 				80F4B7901EF2D01200AB0308 /* profile.png in Resources */,
 				8017B6AA1ED7EA570052CA30 /* 资源 54.png in Resources */,
 				126773331EA062200058CC14 /* NewMyQrViewController.xib in Resources */,
+				80E9914C2057772400CB7203 /* ZYPTController.xib in Resources */,
 				12B521ED1EF63DC4004EBE8E /* placeholder@2x.png in Resources */,
 				8027DA181EF3BF77009A43B6 /* 资源 98@0.5x.png in Resources */,
 				12A8D8111EB33A51007EF391 /* redPacket.png in Resources */,
@@ -5277,6 +5349,7 @@
 				12B523CC1EF64A03004EBE8E /* RBJFHeaderView.m in Sources */,
 				12607C4E1E97448200F6BDC8 /* CardEmailController.m in Sources */,
 				12B522411EF64164004EBE8E /* PushController.m in Sources */,
+				80FBAB462058BAF900450709 /* ZYPTCell.m in Sources */,
 				12A98E121E9F61030018B736 /* MineTable.m in Sources */,
 				12A98E0E1E9F61030018B736 /* MineFooter.m in Sources */,
 				801AE9431F02631D00F84EAA /* QQEmaiLinkController.m in Sources */,
@@ -5309,6 +5382,7 @@
 				1276FE8D1E8B823C00026B05 /* AdvisoryNavBar.m in Sources */,
 				12B523921EF64938004EBE8E /* DoctorController.m in Sources */,
 				80F4B76A1EF25A8100AB0308 /* ScanCodeTool.m in Sources */,
+				80E9914D2057772400CB7203 /* ZYPTController.m in Sources */,
 				12A508FC1EF15A750073E2EC /* TransDetailCell.m in Sources */,
 				12B523991EF64950004EBE8E /* WebController.m in Sources */,
 				12A508FE1EF15A750073E2EC /* TransWeekCell.m in Sources */,
@@ -5440,6 +5514,7 @@
 				12949C5B1EA4741900BDA991 /* WeiChatSuccController.m in Sources */,
 				80CE7CBF1EFB6E3000A70015 /* ADView.m in Sources */,
 				12B522431EF64164004EBE8E /* PushView.m in Sources */,
+				80E991522057777B00CB7203 /* ZYPTView.m in Sources */,
 				12E381611E9DFF9100D68181 /* KKCountdown.m in Sources */,
 				8063A1F01ECD429000EEB74D /* LinkViewController.m in Sources */,
 				8063A1EC1ECD338100EEB74D /* CardWelfareModel.m in Sources */,
@@ -5500,6 +5575,7 @@
 				12E7194F1E963F2B00959D77 /* IntegralShop.m in Sources */,
 				12B522161EF63DC4004EBE8E /* AFNFileModel.m in Sources */,
 				12E719071E96178B00959D77 /* LoanFinTable.m in Sources */,
+				80E9915720577CE700CB7203 /* ZYTable.m in Sources */,
 				122CF4D31E9F65180025E82D /* NewChangeBankController.m in Sources */,
 				12B523C51EF64A03004EBE8E /* RBJFCollection.m in Sources */,
 				12E719081E96178B00959D77 /* LoanFinTableCell.m in Sources */,
@@ -5682,7 +5758,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/weijinrong/WJR_PrefixHeader.pch";
 				INFOPLIST_FILE = weijinrong/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5764,7 +5840,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/weijinrong/WJR_PrefixHeader.pch";
 				INFOPLIST_FILE = weijinrong/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

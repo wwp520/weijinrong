@@ -55,14 +55,10 @@
     [_RBJFheader location];
 }
 
-
-
 - (void)createUI {
     [self createRightHelpBtn];
     [self createLeftMessageBtn];
 }
-
-
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

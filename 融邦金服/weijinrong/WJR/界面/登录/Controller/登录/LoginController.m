@@ -210,8 +210,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)forgetClick:(UIButton *)sender {
-    ForgetController2 * vc = [[ForgetController2 alloc]init];
-   // ForgetController *vc = [[ForgetController alloc] init];
+    //ForgetController2 * vc = [[ForgetController2 alloc]init];
+    ForgetController *vc = [[ForgetController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

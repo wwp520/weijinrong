@@ -168,7 +168,7 @@
     [weakVc showHudLoadingView:@"正在上传"];
     
     NSString *mercid = [SaveManager getStringForKey:@"mercId"];
-    NSString *phone = [NSString stringWithFormat:@"%@mercid",GetAccount];      //商户编号
+ //   NSString *phone = [NSString stringWithFormat:@"%@mercid",GetAccount];      //商户编号
     NSString *pass = _password == nil ? GetPassword : _password;
     
     
@@ -214,7 +214,7 @@
             ResultsViewController * rvc=[[ResultsViewController alloc]init];
             rvc.nameStr=self.nameStr;
             rvc.IDStr=self.IDStr;
-            rvc.cardStr=self.cardStr;
+            rvc.cardStr=self.cardStr; 
             [weakVc.navigationController pushViewController:rvc animated:YES];
         }else {
             [weakVc showTitle:model.retMessage delay:1.5f];

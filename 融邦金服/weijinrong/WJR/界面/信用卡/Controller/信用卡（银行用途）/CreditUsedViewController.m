@@ -20,6 +20,8 @@
 #import "HomeBtn.h"
 #import "ShareLinkController.h"
 #import "CodeLinkController.h"
+#import "NewAttestationController.h"
+#import "UserModel.h"
 
 #define LISTBTN_TAG 99
 
@@ -39,6 +41,7 @@
 @property (nonatomic,strong) NSString * zhongxinUrl;
 @property (nonatomic,strong) NSString * xingyeUrl;
 @property (nonatomic,strong) NSString * minshengUrl;
+@property (nonatomic,strong) NSString * status;
 @end
 
 @implementation CreditUsedViewController
@@ -58,6 +61,13 @@
     }
     return self;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self getUserStatus];
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,12 +91,39 @@
     }
 }
 
+// 获取用户状态
+- (void)getUserStatus {
+    
+    [DongManager getUserStatus:^(id requestData) {
+        UserModel *model = [UserModel decryptBecomeModel:requestData];
+        if (model.retCode == 0) {
+            //认证过
+            
+            if([model.mercSts isEqualToString:@"10"]){ //未认证
+                _status = @"未认证";
+            }else {//已认证
+                _status = @"已认证";
+            }
+        }else {
+            [self showNetFail];
+        }
+    } fail:^(NSError *error) {
+        [self showNetFail];
+    }];
+}
+
 
 //分享
 - (void)DrawBtnClick:(UIButton *)btn{
-    CodeLinkController * shareVC = [[CodeLinkController alloc]init];
-    shareVC.webUrl = self.weburl;
-    [self.navigationController pushViewController:shareVC animated:YES];
+    if ([_status isEqualToString:@"未认证"]) {
+        NewAttestationController * newVC = [[NewAttestationController alloc]init];
+        newVC.flag = @"0";
+        [self.navigationController pushViewController:newVC animated:YES];
+    }else{
+         CodeLinkController * shareVC = [[CodeLinkController alloc]init];
+         shareVC.webUrl = self.weburl;
+         [self.navigationController pushViewController:shareVC animated:YES];
+    }
 }
 
 
@@ -297,9 +334,15 @@
 
 //分享
 - (void)shareBtn:(UIButton *)btn{
-    CodeLinkController * VC = [[CodeLinkController alloc]init];
-    VC.webUrl = self.guangdaUrl;
-    [self.navigationController pushViewController:VC animated:YES];
+    if ([_status isEqualToString:@"未认证"]) {
+        NewAttestationController * newVC = [[NewAttestationController alloc]init];
+        newVC.flag = @"0";
+        [self.navigationController pushViewController:newVC animated:YES];
+    }else{
+        CodeLinkController * shareVC = [[CodeLinkController alloc]init];
+        shareVC.webUrl = self.weburl;
+        [self.navigationController pushViewController:shareVC animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

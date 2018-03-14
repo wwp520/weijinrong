@@ -44,19 +44,14 @@
         
         
         NSDictionary *params = [[NSDictionary alloc]initWithObjectsAndKeys:
-                                //_phone,@"mobilePhone",
-                                @"15753099908",@"mobilePhone",
-                                [_password1.text md5],@"newPassword",nil];
+                                _phone,@"mobilePhone",                                [_password1.text md5],@"newPassword",nil];
         
         
         [DongManager pwdChange:params success:^(id requestData) {
             [self hiddenHudLoadingView];
-            // 解析
             BaseModel *model = [BaseModel decryptBecomeModel:requestData];
             [self showTitle:model.retMessage delay:1];
-            // 判断
             if (model.retCode == 0) {
-                
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1*NSEC_PER_SEC)),dispatch_get_main_queue(), ^{
                     [self popRootDelay];
                 });

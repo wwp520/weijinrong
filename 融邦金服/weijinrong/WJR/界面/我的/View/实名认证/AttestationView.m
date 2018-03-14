@@ -11,6 +11,7 @@
 #import "Unity.h"
 #import "NewPhotoController.h"
 #import "BankListViewController.h"
+#import "ResultsViewController.h"
 
 #pragma mark 声明
 @interface AttestationView ()<UITextFieldDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,UIActionSheetDelegate>
@@ -93,12 +94,116 @@
     return _shadow;
 }
 
+
+- (void)getInfo {    //添加店铺名称
+    
+     //银行卡号去掉中间空格
+     //self.bankCard.text (6236 6823 4000 7683 666) -->self.cardString(6236682340007683666)
+
+     self.cardString = ({
+     NSString *str = @"";
+     NSArray *array = [self.bankCard.text componentsSeparatedByString:@" "];
+     if (array.count > 0) {
+     str = [array componentsJoinedByString:@""];
+     }
+     str;
+     });
+     
+     //弹窗框
+     BaseViewController *vc = (BaseViewController *)self.viewController;
+     if (_name.text == nil || _name.text.length == 0) {
+     [vc showTitle:@"请输入姓名" delay:1.5];
+     }else if (_latitude == 0 || _longitude == 0) {//经纬度为空
+     [vc showTitle:@"获取经纬度失败" delay:1.5];
+     }else if (_address == nil) {
+     [vc showTitle:@"获取城市信息失败" delay:1.5];
+     }else if (_idCard.text == nil || _idCard.text.length == 0) {
+     [vc showTitle:@"请输入身份证号" delay:1.5];
+     }else if (![Unity validateIdentityCard:[self.idCard.text uppercaseString]]) {
+     [vc showTitle:@"身份证号码格式不正确" delay:1.5];
+     }else if (_bank.text == nil || _bank.text.length == 0) {
+     [vc showTitle:@"请选择银行" delay:1.5];
+     }else if (_city.text == nil || _city.text.length == 0) {
+     [vc showTitle:@"请选择省份城市" delay:1.5];
+     }else if (![Unity isValidCreditNumber:self.cardString]){
+     [vc showTitle:@"银行卡号格式不正确" delay:1.5];
+     }else if (_bankCard.text == nil || _bankCard.text.length == 0) {
+     [vc showTitle:@"请输入银行卡号" delay:1.5];
+     }else {
+
+    
+    __weak BaseViewController *weakVc = (BaseViewController *)self.viewController;
+    [weakVc showHudLoadingView:@"正在上传"];
+    
+    NSString *mercid = [SaveManager getStringForKey:@"mercId"];
+    //   NSString *phone = [NSString stringWithFormat:@"%@mercid",GetAccount];      //商户编号
+   // NSString *pass = _password == nil ? GetPassword : _password;
+    
+    
+    NSString * oldParam = [NSString stringWithFormat:@"requestData=%@",({
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                       self.name.text,@"shortName",
+                                       self.business.text,@"merc_name",
+                                       self.idCard.text,@"crpIdNo",
+                                      // @"身份证",@"crpIdTyp",
+                                      // self.emailStr,@"email",
+                                     //  @"",@"email",
+                                       self.cardString,@"bankCardNumber",
+                                       self.bank.text,@"headquartersName",
+                                       self.province_id,@"provinceId",
+                                       self.city_id,@"cityId",
+                                       _address,@"address",
+                                       self.bankCode,@"bankCode",
+                                       @"",@"creditCard",
+                                       self.mobilephone,@"mobilephone",
+                                       ChannelNumber,@"agentNumber",
+                                       mercid,@"mercid",
+                                       [NSString stringWithFormat:@"%f",self.longitude],@"bdlng",
+                                       [NSString stringWithFormat:@"%f",self.latitude],@"bdlat", nil];
+      //  [params setObject:ChannelNumber forKey:@"agentNumber"];
+        [params setObject:self.mobilephone forKey:@"mobilephone"];
+        [params setObject:mercid forKey:@"mercid"];
+      //  [params setObject:[pass md5] forKey:@"password"];
+        
+        NSString *str = [KKTools dictionaryToJson:params];
+        [KKTools encryptionJsonString:str];
+    })];
+    NSDictionary *params2 = [[NSDictionary alloc] initWithObjectsAndKeys:
+                             GetAccount, @"userName",
+                             @"pmsMerchantInfoAction/saveRealNameAuthenticationInformation.action",@"url",
+                             [SaveManager  getStringForKey:@"token"],@"token",
+                             [SaveManager  getStringForKey:@"session"],@"session",
+                             oldParam,@"inParam",nil];
+    NSDictionary *newParam = @{@"param":params2};
+    [DongManager certification:newParam success:^(id requestData) {
+        [weakVc hiddenHudLoadingView];
+        BaseModel *model = [BaseModel decryptBecomeModel:requestData];
+        if (model.retCode == 0) {
+            ResultsViewController * rvc=[[ResultsViewController alloc]init];
+            rvc.nameStr = self.name.text;
+            rvc.IDStr = self.idCard.text;
+            rvc.cardStr = self.cardString;
+            [weakVc.navigationController pushViewController:rvc animated:YES];
+        }else {
+            [weakVc showTitle:model.retMessage delay:1.5f];
+        }
+        
+    } fail:^(NSError *error) {
+        [(BaseViewController *)self.viewController showNetFail];
+    }];
+   }
+}
+
 #pragma mark 点击事件
 - (IBAction)tapG:(UITapGestureRecognizer *)sender {
     [self endEditing:YES];
 }
+
 - (IBAction)nextClick:(UIButton *)sender {
+    [self getInfo];
     
+    /*
     //银行卡号
     self.cardString = ({
         NSString *str = @"";
@@ -147,6 +252,7 @@
         vc2.password    = self.password;
         [self.viewController.navigationController pushViewController:vc2 animated:YES];
     }
+     */
 }
 - (void)shadowClick {
     [_locate cancel:nil];
@@ -234,6 +340,7 @@
     }
     [_city endEditing:YES];
 }
+
 // 选择银行
 - (void)bankChoose {
     
@@ -245,7 +352,6 @@
     };
     [self.viewController.navigationController pushViewController:bvc animated:YES];
 }
-
 
 #pragma mark UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

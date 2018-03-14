@@ -279,11 +279,9 @@
         [self showNetFail];
     }];
     
-    
-    
 }
 
-- (AdvisoryNavBar *)navBar {
+- (AdvisoryNavBar *)navBar {  
     if (!_navBar) {
         _navBar = [AdvisoryNavBar initWithFrame:CGRectMake(0, 0, ScreenWidth, 44) click:^(NSInteger i) {
             [_scroll setContentOffset:CGPointMake(ScreenWidth * (i - 1), 0) animated:YES];

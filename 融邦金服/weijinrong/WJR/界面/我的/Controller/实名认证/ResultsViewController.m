@@ -41,21 +41,21 @@
         UIImageView * nameImage=[Unity imageviewAddsuperview_superView:self.backGroundView _subViewFrame:CGRectMake(0, 0, ScreenWidth,[Unity countcoordinatesY:120/2]) _imageName:@"" _backgroundColor:[UIColor clearColor]];
         nameImage.userInteractionEnabled=YES;
 
-        [Unity lableViewAddsuperview_superView:nameImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20],(nameImage.height-[Unity countcoordinatesY:30])/2 ,ScreenWidth-[Unity countcoordinatesX:20] , [Unity countcoordinatesY:30]) _string:[NSString stringWithFormat:@"真实姓名:%@",self.nameStr] _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
+        [Unity lableViewAddsuperview_superView:nameImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20],(nameImage.height-[Unity countcoordinatesY:30])/2 ,ScreenWidth-[Unity countcoordinatesX:20] , [Unity countcoordinatesY:30]) _string:[NSString stringWithFormat:@"真实姓名: %@",self.nameStr] _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
         UILabel * line=[Unity lableViewAddsuperview_superView:nameImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20/2], nameImage.height-1, ScreenWidth-2 * [Unity countcoordinatesX:20/2], 1) _string:@"" _lableFont:TitleSize _lableTxtColor:[UIColor clearColor] _textAlignment:NSTextAlignmentLeft];
         line.backgroundColor=LineColor;
         
         UIImageView * IDImage=[Unity imageviewAddsuperview_superView:self.backGroundView _subViewFrame:CGRectMake(0, nameImage.height, ScreenWidth,[Unity countcoordinatesY:120/2] ) _imageName:@"" _backgroundColor:[UIColor clearColor]];
         IDImage.userInteractionEnabled=YES;
 
-        [Unity lableViewAddsuperview_superView:IDImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20],(IDImage.height-[Unity countcoordinatesY:30])/2 ,ScreenWidth-[Unity countcoordinatesX:20] , [Unity countcoordinatesY:30]) _string:[NSString stringWithFormat:@"证件号码:%@",self.IDStr] _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
+        [Unity lableViewAddsuperview_superView:IDImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20],(IDImage.height-[Unity countcoordinatesY:30])/2 ,ScreenWidth-[Unity countcoordinatesX:20] , [Unity countcoordinatesY:30]) _string:[NSString stringWithFormat:@"证件号码: %@",self.IDStr] _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
         UILabel * line1=[Unity lableViewAddsuperview_superView:IDImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20/2], IDImage.height-1, ScreenWidth-2 * [Unity countcoordinatesX:20/2], 1) _string:@"" _lableFont:TitleSize _lableTxtColor:[UIColor clearColor] _textAlignment:NSTextAlignmentLeft];
         line1.backgroundColor=LineColor;
         
         UIImageView * cardImage=[Unity imageviewAddsuperview_superView:self.backGroundView _subViewFrame:CGRectMake(0, IDImage.top+IDImage.height, ScreenWidth,[Unity countcoordinatesY:120/2] ) _imageName:@"" _backgroundColor:[UIColor clearColor]];
         IDImage.userInteractionEnabled=YES;
 
-        [Unity lableViewAddsuperview_superView:cardImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20],(cardImage.height-[Unity countcoordinatesY:30])/2 ,ScreenWidth-[Unity countcoordinatesX:20] , [Unity countcoordinatesY:30]) _string:[NSString stringWithFormat:@"银行卡号:%@",self.cardStr] _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
+        [Unity lableViewAddsuperview_superView:cardImage _subViewFrame:CGRectMake([Unity countcoordinatesX:20],(cardImage.height-[Unity countcoordinatesY:30])/2 ,ScreenWidth-[Unity countcoordinatesX:20] , [Unity countcoordinatesY:30]) _string:[NSString stringWithFormat:@"银行卡号: %@",self.cardStr] _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
         UILabel * line2=[Unity lableViewAddsuperview_superView:cardImage _subViewFrame:CGRectMake(0, cardImage.height-1, ScreenWidth, 1) _string:@"" _lableFont:TitleSize _lableTxtColor:[UIColor clearColor] _textAlignment:NSTextAlignmentLeft];
         line2.backgroundColor=LineColor;
         
