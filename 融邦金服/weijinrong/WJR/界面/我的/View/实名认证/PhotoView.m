@@ -26,10 +26,9 @@
     UIButton *_selectBtn;
 }
 //等待框
-@property (nonatomic,retain) UIView * grayBView;
 @property (nonatomic,retain) UIProgressView * prog;
 @property (nonatomic,retain) UILabel * progLab;
-@property (nonatomic,retain) UIView * pView;
+
 
 @property (strong, nonatomic) IBOutlet UIButton *person;
 @property (strong, nonatomic) IBOutlet UIButton *cardA;

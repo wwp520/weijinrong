@@ -9,6 +9,9 @@
 #import "BaseView.h"
 
 @interface MineHeader : BaseView
+@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *iconBtn;
 // 登录前
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 // 登录后

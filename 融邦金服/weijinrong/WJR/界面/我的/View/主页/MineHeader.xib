@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +57,7 @@
                                 <constraint firstAttribute="trailing" secondItem="cLB-uv-8Dg" secondAttribute="trailing" id="vYU-ds-wJ1"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kip-fD-03l">
+                        <button opaque="NO" tag="5000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kip-fD-03l">
                             <rect key="frame" x="146" y="137.5" width="90" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="eLt-eQ-70L"/>
@@ -68,6 +69,13 @@
                                 <action selector="loginClick:" destination="e82-XM-2az" eventType="touchUpInside" id="H0B-2t-CAU"/>
                             </connections>
                         </button>
+                        <imageView userInteractionEnabled="NO" tag="10000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqt-oJ-Jjs">
+                            <rect key="frame" x="132" y="20" width="116" height="116"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="116" id="pny-ed-rhe"/>
+                                <constraint firstAttribute="height" constant="116" id="qOX-8b-AYN"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.22745098039215686" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -76,11 +84,13 @@
                         <constraint firstItem="oUL-QQ-Ynb" firstAttribute="centerX" secondItem="ont-ih-KJo" secondAttribute="centerX" id="Cdo-5p-3Fd"/>
                         <constraint firstItem="oUL-QQ-Ynb" firstAttribute="top" secondItem="ont-ih-KJo" secondAttribute="top" constant="20" id="E4l-4c-QE6"/>
                         <constraint firstAttribute="bottom" secondItem="Zog-SZ-b9U" secondAttribute="bottom" id="HbL-Pm-LzO"/>
+                        <constraint firstItem="qqt-oJ-Jjs" firstAttribute="top" secondItem="ont-ih-KJo" secondAttribute="top" constant="20" id="Xmh-IA-q4P"/>
                         <constraint firstAttribute="bottom" secondItem="oUL-QQ-Ynb" secondAttribute="bottom" constant="60" id="bZ6-Mx-Ow2"/>
                         <constraint firstItem="Zog-SZ-b9U" firstAttribute="centerX" secondItem="ont-ih-KJo" secondAttribute="centerX" id="eZV-8b-uBl"/>
                         <constraint firstAttribute="width" secondItem="ont-ih-KJo" secondAttribute="height" multiplier="2:1" id="ksm-5q-Ffy"/>
                         <constraint firstItem="Zog-SZ-b9U" firstAttribute="top" secondItem="oUL-QQ-Ynb" secondAttribute="bottom" id="lUF-rw-uik"/>
                         <constraint firstItem="Zog-SZ-b9U" firstAttribute="centerX" secondItem="kip-fD-03l" secondAttribute="centerX" id="o9z-G4-u5B"/>
+                        <constraint firstItem="qqt-oJ-Jjs" firstAttribute="centerX" secondItem="ont-ih-KJo" secondAttribute="centerX" id="sA6-Xg-fap"/>
                     </constraints>
                 </view>
             </subviews>
@@ -93,6 +103,8 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="iconBtn" destination="oUL-QQ-Ynb" id="r4H-lY-Nnr"/>
+                <outlet property="iconImage" destination="qqt-oJ-Jjs" id="UA2-2e-Xsq"/>
                 <outlet property="loginBtn" destination="kip-fD-03l" id="QsD-L9-oit"/>
                 <outlet property="logined" destination="Zog-SZ-b9U" id="ZAu-Np-hnk"/>
                 <outlet property="name" destination="rIk-7A-uUU" id="Sfr-ap-fSr"/>

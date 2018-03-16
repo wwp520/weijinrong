@@ -11,5 +11,10 @@
 @interface ZYPTCell : BaseCell
 
 + (instancetype)loadWithTable1:(UITableView *)table;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *titleLb;
+@property (weak, nonatomic) IBOutlet UILabel *contentLb;
+@property (weak, nonatomic) IBOutlet UIButton *pushBtn;
+@property (weak, nonatomic) IBOutlet UIButton *bmgBtn;
 
 @end

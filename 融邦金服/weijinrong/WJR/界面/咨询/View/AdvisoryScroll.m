@@ -30,4 +30,6 @@
         _click((scrollView.contentOffset.x + scrollView.width / 2) / scrollView.width);
     }
 }
+
+
 @end

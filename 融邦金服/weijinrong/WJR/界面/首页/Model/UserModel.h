@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString *mercSts;
 @property (nonatomic, strong) NSString *mercId;
+@property (nonatomic, strong) NSString *url;
 
 @end

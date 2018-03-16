@@ -242,8 +242,8 @@
         [self showNetFail];
     }];
     
-    
 }
+
 - (void)getTEInfo:(NSInteger)page{
     
     [self  showHudLoadingView:@"正在获取。。。"];
@@ -302,6 +302,7 @@
     }
     return _navBar;
 }
+
 
 - (AdvisoryScroll *)scroll {
     if (!_scroll) {

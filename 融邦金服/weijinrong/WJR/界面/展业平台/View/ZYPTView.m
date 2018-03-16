@@ -17,8 +17,7 @@
 
 @implementation ZYPTView
 
-
-+ (instancetype)initWithFrame:(CGRect)frame click:(KKIntBlock)click {
++ (instancetype)initWithFrame:(CGRect)frame click:(KKIntBlock)click {  
     ZYPTView *view = [[NSBundle mainBundle] loadNibNamed:@"ZYPTView" owner:nil options:nil].firstObject;
     view.frame = frame;
     view.click = click;
@@ -29,17 +28,17 @@
     if (_click) {
         _click(sender.tag);
     }
-    [UIView animateWithDuration:.2f animations:^{
-        _line.x = sender.x + (ScreenWidth / 3 - _line.width) / 2;
+    NSLog(@"*********************************%ld",(long)sender.tag);
+    [UIView animateWithDuration:1.5f animations:^{
+        _line.x = sender.x + (ScreenWidth / 2 - _line.width) / 2;
     }];
 }
 
 //scroll点击滑动
 - (void)changeClick1:(NSInteger)count {
-    [UIView animateWithDuration:.2f animations:^{
-        _line.x = count * (ScreenWidth / 3 - 10) + (ScreenWidth / 3 - _line.width) / 2;
+    [UIView animateWithDuration:1.5f animations:^{
+        _line.x = count * (ScreenWidth / 2 - 10) + (ScreenWidth / 2 - _line.width) / 2;
     }];
 }
-
 
 @end

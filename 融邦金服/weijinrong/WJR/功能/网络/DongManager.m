@@ -1970,6 +1970,7 @@
 }
 
 // 获取用户状态(不确定好不好使)  saveRealNameAuthenticationInformation
+// pmsAppNoticeAction/merchantInfoStatus.action
 + (void)getUserStatus:(SuccessBlock)success
                  fail:(AFNErrorBlock)fail {
     
@@ -1984,7 +1985,7 @@
     NSDictionary *newParam = [[NSDictionary alloc] initWithObjectsAndKeys:
                               GetAccount, @"userName",
 //                              @"pmsAppNoticeAction/merchantInfoStatus.action",@"url",
-            @"pmsAppNoticeAction/merchantInfoStatus.action",@"url",
+            @"drawMoneyAction/selectUser.action",@"url",
                               [SaveManager  getStringForKey:@"token"],@"token",
                               [SaveManager  getStringForKey:@"session"],@"session",
                               oldParam,@"inParam",nil];

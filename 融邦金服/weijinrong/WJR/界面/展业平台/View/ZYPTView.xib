@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -22,32 +23,30 @@
                         <constraint firstAttribute="width" constant="107" id="0d5-mu-0LL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                    <state key="normal" title="信用卡">
-                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
+                    <state key="normal" title="信用卡"/>
+                    <connections>
+                        <action selector="changeClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="I2v-A4-fZf"/>
+                    </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-Zh-9dF">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-Zh-9dF">
                     <rect key="frame" x="204" y="-1" width="107" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="107" id="oDK-am-xgX"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                    <state key="normal" title="贷款">
-                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
+                    <state key="normal" title="贷款"/>
                     <connections>
                         <action selector="changeClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="nvO-Da-gTE"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-Ej-T4Z">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-Ej-T4Z">
                     <rect key="frame" x="50" y="36" width="66" height="4"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="4" id="Bh5-aj-RiQ"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="8Yo-Zh-9dF" firstAttribute="firstBaseline" secondItem="pEZ-Hf-UFd" secondAttribute="baseline" id="00T-yT-FDX"/>
                 <constraint firstAttribute="trailing" secondItem="A1S-Ej-T4Z" secondAttribute="trailing" constant="225" id="Jey-YJ-23t"/>

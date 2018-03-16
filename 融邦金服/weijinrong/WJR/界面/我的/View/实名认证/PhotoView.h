@@ -10,6 +10,9 @@
 
 @interface PhotoView : UIView
 
+@property (nonatomic,retain) UIView * pView;
+@property (nonatomic,retain) UIView * grayBView;
+
 /* 字符串 **/
 @property (nonatomic, copy) NSString *nameStr;
 @property (nonatomic, copy) NSString *shopStr;  //店铺名称

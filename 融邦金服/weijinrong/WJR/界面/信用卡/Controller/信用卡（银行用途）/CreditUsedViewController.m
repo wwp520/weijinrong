@@ -68,7 +68,6 @@
 }
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     curPage = 1;
@@ -295,7 +294,7 @@
         [cell.icon sd_setImageWithURL:[NSURL URLWithString:model.logo] placeholderImage:[UIImage  imageNamed:@"moren.png"]];
         cell.desc.text = model.body;
         cell.number.text = [NSString  stringWithFormat:@"%@人",model.countCard];
-        cell.benifitModel = model;      //立即申请
+        cell.benifitModel = model;
         cell.name.text = model.title;
         
         //光大

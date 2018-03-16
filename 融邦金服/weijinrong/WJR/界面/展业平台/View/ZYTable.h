@@ -11,6 +11,8 @@
 
 @interface ZYTable : UITableView<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic,assign) NSInteger index;
+
 + (instancetype)initWithFrame:(CGRect)frame;
 
 @end

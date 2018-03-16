@@ -45,10 +45,10 @@
     
     // 添加子控制器
     [self setupChildVc:[[HomeController alloc] init] title:@"首页" image:@"融邦金服" selectedImage:@"融邦金服首页"];
+    
+    [self setupChildVc:[[ZYPTController alloc] init] title:@"展业平台" image:@"zy_zypt_huise" selectedImage:@"zy_zypt"];
 
     [self setupChildVc:[[AdvisoryController alloc] init] title:@"资讯" image:@"融邦金服资讯" selectedImage:@"资讯(高亮)"];
-    
-    [self setupChildVc:[[ZYPTController alloc] init] title:@"展业平台" image:@"融邦金服资讯" selectedImage:@"资讯(高亮)"];
     
     [self setupChildVc:[[MineController alloc] init] title:@"个人" image:@"融邦金服个人" selectedImage:@"个人(高亮)"];
     

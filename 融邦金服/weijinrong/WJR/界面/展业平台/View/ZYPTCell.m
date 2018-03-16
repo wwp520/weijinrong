@@ -12,6 +12,9 @@
 
 + (instancetype)loadWithTable1:(UITableView *)table {
     ZYPTCell *cell = [ZYPTCell loadWithTable:table];
+    cell.bmgBtn.layer.cornerRadius = 5;
+    cell.bmgBtn.layer.masksToBounds = YES;
+    cell.bmgBtn.userInteractionEnabled = NO;
     return cell;
 }
 

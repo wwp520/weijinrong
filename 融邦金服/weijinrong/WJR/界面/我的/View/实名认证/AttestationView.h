@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface AttestationView : UIView
+@property (weak, nonatomic) IBOutlet UITextField *photoTF;
+@property (weak, nonatomic) IBOutlet UIButton *photoBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *photo2Image;
+
 @property (strong, nonatomic) IBOutlet UITextField *business;
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *idCard;

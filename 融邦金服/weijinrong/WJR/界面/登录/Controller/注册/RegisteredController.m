@@ -90,6 +90,7 @@
         NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:_phone.text,@"mobilePhone",
            [_pass1.text md5],@"password",
            _code.text,@"messageAuthenticationCode", nil];
+        //参数可传可不传时,直接保存在可变字典里
         if (_introduceTF.text.length != 0) {
             [params setObject:_introduceTF.text forKey:@"generalize"];
         }

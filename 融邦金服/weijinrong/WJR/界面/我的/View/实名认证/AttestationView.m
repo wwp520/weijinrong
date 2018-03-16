@@ -12,9 +12,21 @@
 #import "NewPhotoController.h"
 #import "BankListViewController.h"
 #import "ResultsViewController.h"
+#import "PhotoModel.h"
+#import "PhotoView.h"
+#import "ZYHImageCompression.h"
+#import "UIImage+ExitUIImage.h"
+
 
 #pragma mark 声明
 @interface AttestationView ()<UITextFieldDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,UIActionSheetDelegate>
+{
+   UIButton *_selectBtn;
+}
+
+//等待框
+@property (nonatomic,retain) UIProgressView * prog;
+@property (nonatomic,retain) UILabel * progLab;
 
 // 输入框
 @property (strong, nonatomic) IBOutlet UIButton *next;
@@ -22,6 +34,12 @@
 @property (nonatomic, strong) TSLocateView *locate;//选择城市
 @property (nonatomic, strong) NSString *cardString;//银行卡号(没有空格)
 @property (nonatomic, strong) UIButton *shadow;//阴影
+@property (nonatomic,strong) PhotoView *photoView;
+
+@property (nonatomic, strong) NSMutableArray *select_img;//选择后图片
+@property (nonatomic, strong) NSMutableArray *normal_img;//选择后图片
+@property (nonatomic, strong) NSMutableDictionary *upDict;//上传的图片
+
 
 // 地图
 @property (nonatomic, strong) BMKReverseGeoCodeOption *searchGeo;//百度搜索
@@ -54,6 +72,108 @@
     view.city.inputView = [UIView new];
     return view;
 }
+
+#pragma mark 初始化
+- (void)createProgressView {
+    _photoView.grayBView = [Unity backviewAddview_subViewFrame:self.viewController.view.bounds _viewColor:[UIColor grayColor]];
+    _photoView.grayBView.alpha=0.4;
+    [self addSubview:_photoView.grayBView];
+    _photoView.pView = [Unity backviewAddview_subViewFrame:CGRectMake(ScreenWidth/2-240/2, ScreenHeight/2-140/2-64, 240, 100) _viewColor:[UIColor whiteColor]];
+    [self addSubview:_photoView.pView];
+    [_photoView.pView.layer setMasksToBounds:YES];
+    [_photoView.pView.layer setCornerRadius:6.0];
+    [Unity lableViewAddsuperview_superView:_photoView.pView _subViewFrame:CGRectMake(10, 5, _photoView.pView.width-10, 30) _string:@"正在上传" _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentLeft];
+    self.prog=[[UIProgressView alloc]initWithFrame:CGRectMake(10, 50, 220, 100)];
+    self.prog.progressViewStyle=UIProgressViewStyleDefault;
+    self.progLab=[Unity lableViewAddsuperview_superView:_photoView.pView _subViewFrame:CGRectMake(20, 55, 200, 40) _string:@"0%" _lableFont:TitleSize _lableTxtColor:TitleColor _textAlignment:NSTextAlignmentCenter];
+    [_photoView.pView addSubview:self.prog];
+}
+
+
+//拍照上传
+- (IBAction)uploadBtn:(id)sender {
+    _selectBtn = sender;
+    [self takePhoto];
+}
+
+#pragma mark 网络请求
+//上传图片
+- (void)changeImage {
+    // 上传百分比
+    [self createProgressView];
+    // weak
+    __weak BaseViewController *weakVc = (BaseViewController *)self.viewController;
+   // __weak PhotoView *weak = self;
+    // 信息
+    NSDictionary *params = @{@"mobilePhone":_mobilephone};
+    // 图片
+    NSMutableArray *arrayM = ({
+        NSArray *name = @[@"hand"];
+       // NSArray *name = @[@"hand",@"positive",@"reverse",@"cardpositive",
+ //                         @"cardreverse",@"BusinessLicense"];
+        NSMutableArray *arrayM = [NSMutableArray array];
+        for (int i = 0; i < name.count; i++) {
+            AFNFileModel *model = ({
+                AFNFileModel *model = [[AFNFileModel alloc]init];
+                model.fileName = [NSString stringWithFormat:@"%@.jpg",name[i]];
+                model.name = @"file";
+                model.mimeType = @"multipart/form-data";
+                UIImage *image = [(UIImageView *)[self viewWithTag:10000 + i] image];
+                model.fileData = UIImagePNGRepresentation(image);
+                model;
+            });
+            [arrayM addObject:model];
+        }
+        arrayM;
+    });
+    
+    //图片上传
+    //    NSString * oldParam = [NSString stringWithFormat:@"requestData=%@",({
+    //        NSString *str = [KKTools dictionaryToJson:params];
+    //        [KKTools encryptionJsonString:str];
+    //    })];
+    //    NSDictionary *params2 = [[NSDictionary alloc] initWithObjectsAndKeys:
+    //                            GetAccount, @"userName",
+    //                             @"upload1",@"url",
+    //                             [SaveManager getStringForKey:@"token"],@"token",
+    //                             [SaveManager getStringForKey:@"session"],@"session",
+    //                             oldParam,@"inParam",nil];
+    //    NSDictionary *newParam = @{@"param":params2};
+    
+    
+    [KKManager upload:params images:arrayM success:^(id requestData) {
+        // 隐藏
+        [weakVc hiddenHudLoadingView];
+        // 解析
+        
+        NSString *resStr   = [KKTools decryptJsonString:requestData];
+        NSDictionary *dict = [KKTools dictionaryWithJsonString:resStr];
+        PhotoModel *model  = [PhotoModel mj_objectWithKeyValues:dict];
+        if (model.retCode == 0) {
+            [self getInfo];
+        }else {
+            [weakVc showTitle:model.retMessage delay:1];
+        }
+        // 界面
+        [_photoView.pView setAlpha:0];
+        [_photoView.grayBView setAlpha:0];
+    } fail:^(NSError *error) {
+        [weakVc showNetFail];
+        [_photoView.pView setAlpha:0];
+        [_photoView.grayBView setAlpha:0];
+    } progess:^(double progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (ScreenHeight <= 480) {
+                [self.progLab setText:@"80%"];
+            }else {
+                float p = progress;
+                [self.prog setProgress:p];
+                [self.progLab setText:[NSString stringWithFormat:@"%0.1f%%",progress * 100]];
+            }
+        });
+    }];
+}
+
 
 // 返回第一响应者
 - (UITextField *)getFirst {
@@ -143,7 +263,8 @@
     NSString * oldParam = [NSString stringWithFormat:@"requestData=%@",({
         
         NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                       self.name.text,@"shortName",
+                                    //   self.name.text,@"shortName",
+                                       @"见习经理",@"shortName",
                                        self.business.text,@"merc_name",
                                        self.idCard.text,@"crpIdNo",
                                       // @"身份证",@"crpIdTyp",
@@ -180,11 +301,14 @@
         [weakVc hiddenHudLoadingView];
         BaseModel *model = [BaseModel decryptBecomeModel:requestData];
         if (model.retCode == 0) {
+            [self.viewController.navigationController popToRootViewControllerAnimated:YES];
+            /*
             ResultsViewController * rvc=[[ResultsViewController alloc]init];
             rvc.nameStr = self.name.text;
             rvc.IDStr = self.idCard.text;
             rvc.cardStr = self.cardString;
             [weakVc.navigationController pushViewController:rvc animated:YES];
+             */
         }else {
             [weakVc showTitle:model.retMessage delay:1.5f];
         }
@@ -201,59 +325,10 @@
 }
 
 - (IBAction)nextClick:(UIButton *)sender {
-    [self getInfo];
-    
-    /*
-    //银行卡号
-    self.cardString = ({
-        NSString *str = @"";
-        NSArray *array = [self.bankCard.text componentsSeparatedByString:@" "];
-        if (array.count > 0) {
-            str = [array componentsJoinedByString:@""];
-        }
-        str;
-    });
-    
-    //弹窗框
-    BaseViewController *vc = (BaseViewController *)self.viewController;
-    if (_name.text == nil || _name.text.length == 0) {
-        [vc showTitle:@"请输入姓名" delay:1.5];
-    }else if (_latitude == 0 || _longitude == 0) {//经纬度为空
-        [vc showTitle:@"获取经纬度失败" delay:1.5];
-    }else if (_address == nil) {
-        [vc showTitle:@"获取城市信息失败" delay:1.5];
-    }else if (_idCard.text == nil || _idCard.text.length == 0) {
-        [vc showTitle:@"请输入身份证号" delay:1.5];
-    }else if (![Unity validateIdentityCard:[self.idCard.text uppercaseString]]) {
-        [vc showTitle:@"身份证号码格式不正确" delay:1.5];
-    }else if (_bank.text == nil || _bank.text.length == 0) {
-        [vc showTitle:@"请选择银行" delay:1.5];
-    }else if (_city.text == nil || _city.text.length == 0) {
-        [vc showTitle:@"请选择省份城市" delay:1.5];
-    }else if (![Unity isValidCreditNumber:self.cardString]){
-        [vc showTitle:@"银行卡号格式不正确" delay:1.5];
-    }else if (_bankCard.text == nil || _bankCard.text.length == 0) {
-        [vc showTitle:@"请输入银行卡号" delay:1.5];
-    }else {
-        NewPhotoController *vc2 = [[NewPhotoController alloc] init];
-        vc2.nameStr     = self.name.text;
-        vc2.IDStr       = self.idCard.text;
-        vc2.emailStr    = @"";
-        vc2.cardStr     = self.cardString;
-        vc2.bankCode    = self.bankCode;
-        vc2.bankName    = self.bank.text;
-        vc2.province_id = self.province_id;
-        vc2.city_id     = self.city_id;
-        vc2.longitude   = _longitude;
-        vc2.latitude    = _latitude;
-        vc2.address     = _address;
-        vc2.shopStr     = self.business.text;
-        vc2.mobilephone = self.mobilephone;
-        vc2.password    = self.password;
-        [self.viewController.navigationController pushViewController:vc2 animated:YES];
-    }
-     */
+    [self changeImage];
+  //  [self getInfo];
 }
+
 - (void)shadowClick {
     [_locate cancel:nil];
     [UIView animateWithDuration:.2f animations:^{
@@ -374,5 +449,124 @@
     return YES;
 }
 
+
+#pragma mark UIImagePickerControllerDelegate
+// 打开照相机
+- (void)takePhoto {
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        return;
+    }
+    if (self.viewController.presentedViewController) {
+        return;
+    }
+    //    [[[UIApplication sharedApplication].windows objectAtIndex:1] makeKeyAndVisible];
+    UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing= NO;
+    picker.view.backgroundColor = [UIColor blackColor];
+    picker.sourceType =	sourceType;//		UIImagePickerControllerSourceTypePhotoLibrary;
+    [self.viewController presentViewController:picker animated:YES completion:nil];
+    
+}
+// 打开本地相册
+- (void)localPhoto {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    //设置选择后的图片可被编辑
+    picker.allowsEditing = YES;
+    [self.viewController presentViewController:picker animated:YES completion:nil];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"您取消了选择图片");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    //关闭相册界面
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    //当选择的类型是图片
+    if ([type isEqualToString:@"public.image"]){
+        //先把图片转成NSData
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        CGSize size = [ZYHImageCompression get_ImageCompressionProportion:image];
+        image = [image imageByScalingAndCroppingForSize:size];
+        
+        NSData *data;
+        if (UIImagePNGRepresentation(image) == nil) {
+            data = UIImageJPEGRepresentation(image, 0.25);
+        }
+        else {
+            data = UIImagePNGRepresentation(image);
+        }
+        //图片保存的路径
+        //这里将图片放在沙盒的documents文件夹中
+        NSString * DocumentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        //文件管理器
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+        [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+        [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:@"/image.png"] contents:data attributes:nil];
+        image = [Unity imageWithImageSimple:image scaledToSize:CGSizeMake(size.width, size.height)];
+        
+        
+        if (_photoBtn.tag == 5000) {
+            [self.upDict setObject:image forKey:@"hand"];
+        }
+        
+        _photoImage.image = [UIImage imageWithData:data];
+         _photo2Image.alpha = 0;
+        /*
+        //显示和隐藏
+        UIImageView *selectView = (UIImageView *)[self viewWithTag:10000 + _selectBtn.tag - 5000];
+        selectView.image = [UIImage imageWithData:data];
+        UIImageView *normalView = (UIImageView *)[self viewWithTag:10000 + _selectBtn.tag - 5000];
+        normalView.alpha = 0;
+         */
+    }
+}
+
+#pragma mark 不用看的
+- (PhotoView *)photoView{
+    if (!_photoView) {
+        _photoView = [PhotoView initWithFrame:CGRectMake(0, 0, 200, 200)];
+     //   _photoView = [[NSBundle mainBundle] loadNibNamed:@"PhotoView" owner:nil options:nil].firstObject;
+        _photoView.height = 530;
+    }
+    return _photoView;
+}
+
+/*
++ (instancetype)initWithFrame:(CGRect)frame {
+    PhotoView *view = [[NSBundle mainBundle] loadNibNamed:@"PhotoView" owner:nil options:nil].firstObject;
+    view.frame = frame;
+    view.height = 530;
+    [view setUI];
+    return view;
+}
+- (void)setUI {
+    [self setBtn:_person];
+    [self setBtn:_cardA];
+    [self setBtn:_cardB];
+    [self setBtn:_bank];
+    [self setBtn:_trust];
+    [self setBtn:_shop];
+    
+    [self setSelectImg:_person_img];
+    [self setSelectImg:_cardA_img];
+    [self setSelectImg:_cardB_img];
+    [self setSelectImg:_bank_img];
+    [self setSelectImg:_trust_img];
+    [self setSelectImg:_shop_img];
+}
+- (void)setBtn:(UIButton *)btn {
+    btn.layer.cornerRadius = 8;
+    btn.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
+    btn.layer.borderColor = [UIColor grayColor].CGColor;
+    btn.layer.masksToBounds = YES;
+}
+*/
 
 @end

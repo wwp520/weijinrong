@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,22 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="355" height="89"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="355" height="88.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="355" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-dA-ntu">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-dA-ntu">
                         <rect key="frame" x="16" y="10" width="323" height="68"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meituan_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-2W-8ZW">
-                        <rect key="frame" x="30" y="29.5" width="30" height="30"/>
+                        <rect key="frame" x="30" y="24.5" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="XN1-fb-2xT"/>
-                            <constraint firstAttribute="height" constant="30" id="mBj-u4-2UJ"/>
+                            <constraint firstAttribute="width" constant="40" id="XN1-fb-2xT"/>
+                            <constraint firstAttribute="height" constant="40" id="mBj-u4-2UJ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信用卡单卡推广" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzu-21-Rj9">
-                        <rect key="frame" x="80" y="20" width="114.5" height="21"/>
+                        <rect key="frame" x="90" y="20" width="114.5" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="H0I-LR-XXQ"/>
                         </constraints>
@@ -40,7 +39,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享卡种小链接发送朋友圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBF-IR-tNy">
-                        <rect key="frame" x="80" y="47.5" width="159.5" height="21"/>
+                        <rect key="frame" x="90" y="47.5" width="159.5" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Cql-be-pAp"/>
                         </constraints>
@@ -48,14 +47,13 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgX-WJ-OZt">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgX-WJ-OZt">
                         <rect key="frame" x="295" y="28.5" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="iMK-2t-QOS"/>
                             <constraint firstAttribute="width" constant="30" id="q6A-f4-ZSy"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                        <state key="normal" title="&gt;"/>
+                        <state key="normal" image="zy_push.png"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -74,11 +72,18 @@
                     <constraint firstItem="XVC-dA-ntu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pTu-ob-qsV"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="51.5" y="25.5"/>
+            <connections>
+                <outlet property="bmgBtn" destination="XVC-dA-ntu" id="l8C-vg-gqS"/>
+                <outlet property="contentLb" destination="NBF-IR-tNy" id="jrf-72-x4v"/>
+                <outlet property="icon" destination="zvn-2W-8ZW" id="NQs-Td-cZj"/>
+                <outlet property="pushBtn" destination="CgX-WJ-OZt" id="RLW-Sf-9fO"/>
+                <outlet property="titleLb" destination="Nzu-21-Rj9" id="C0W-Cw-VBs"/>
+            </connections>
+            <point key="canvasLocation" x="-51" y="34"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="meituan_icon.png" width="84" height="84"/>
+        <image name="zy_push.png" width="12" height="19"/>
     </resources>
 </document>

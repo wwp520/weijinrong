@@ -561,6 +561,29 @@
 		8084C7881EF00C92006F123B /* CardInputList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8084C7861EF00C92006F123B /* CardInputList.xib */; };
 		8084C78B1EF02425006F123B /* RewardBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8084C78A1EF02425006F123B /* RewardBankModel.m */; };
 		808A04F61EF8199500E4F828 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 808A04F51EF8199500E4F828 /* UserModel.m */; };
+		808FBB69205A1506005E2C4B /* ZYBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808FBB68205A1506005E2C4B /* ZYBankCell.m */; };
+		808FBB6B205A1515005E2C4B /* ZYBankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB6A205A1515005E2C4B /* ZYBankCell.xib */; };
+		808FBB6E205A5804005E2C4B /* ZYWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808FBB6D205A5804005E2C4B /* ZYWebController.m */; };
+		808FBB71205A5DBB005E2C4B /* ZYTable2.m in Sources */ = {isa = PBXBuildFile; fileRef = 808FBB70205A5DBB005E2C4B /* ZYTable2.m */; };
+		808FBB75205A6565005E2C4B /* zy_push.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB72205A6565005E2C4B /* zy_push.png */; };
+		808FBB76205A6565005E2C4B /* zy_push@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB73205A6565005E2C4B /* zy_push@2X.png */; };
+		808FBB77205A6565005E2C4B /* zy_push@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB74205A6565005E2C4B /* zy_push@3X.png */; };
+		808FBB7A205A6882005E2C4B /* ZYDKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808FBB79205A6882005E2C4B /* ZYDKController.m */; };
+		808FBB7E205A6B29005E2C4B /* zy_zypt.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB7B205A6B29005E2C4B /* zy_zypt.png */; };
+		808FBB7F205A6B29005E2C4B /* zy_zypt@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB7C205A6B29005E2C4B /* zy_zypt@2X.png */; };
+		808FBB80205A6B29005E2C4B /* zy_zypt@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB7D205A6B29005E2C4B /* zy_zypt@3X.png */; };
+		808FBB84205A6B5C005E2C4B /* zy_zypt_huise.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB81205A6B5C005E2C4B /* zy_zypt_huise.png */; };
+		808FBB85205A6B5C005E2C4B /* zy_zypt_huise@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB82205A6B5C005E2C4B /* zy_zypt_huise@2X.png */; };
+		808FBB86205A6B5C005E2C4B /* zy_zypt_huise@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB83205A6B5C005E2C4B /* zy_zypt_huise@3X.png */; };
+		808FBB91205A6F26005E2C4B /* zy_yinhang@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB88205A6F26005E2C4B /* zy_yinhang@3X.png */; };
+		808FBB92205A6F26005E2C4B /* zy_yinhang@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB89205A6F26005E2C4B /* zy_yinhang@2X.png */; };
+		808FBB93205A6F26005E2C4B /* zy_rongbang@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB8A205A6F26005E2C4B /* zy_rongbang@3X.png */; };
+		808FBB94205A6F26005E2C4B /* zy_yinhang.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB8B205A6F26005E2C4B /* zy_yinhang.png */; };
+		808FBB95205A6F26005E2C4B /* zy_rongbang@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB8C205A6F26005E2C4B /* zy_rongbang@2X.png */; };
+		808FBB96205A6F26005E2C4B /* zy_danka@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB8D205A6F26005E2C4B /* zy_danka@2X.png */; };
+		808FBB97205A6F26005E2C4B /* zy_danka@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB8E205A6F26005E2C4B /* zy_danka@3X.png */; };
+		808FBB98205A6F26005E2C4B /* zy_rongbang.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB8F205A6F26005E2C4B /* zy_rongbang.png */; };
+		808FBB99205A6F26005E2C4B /* zy_danka.png in Resources */ = {isa = PBXBuildFile; fileRef = 808FBB90205A6F26005E2C4B /* zy_danka.png */; };
 		809215541F009EF6007BB778 /* ShenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 809215531F009EF6007BB778 /* ShenView.m */; };
 		809215561F009F01007BB778 /* ShenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 809215551F009F01007BB778 /* ShenView.xib */; };
 		809215641F00B67A007BB778 /* 扫码收款.png in Resources */ = {isa = PBXBuildFile; fileRef = 809215631F00B67A007BB778 /* 扫码收款.png */; };
@@ -717,6 +740,10 @@
 		80CE7CBF1EFB6E3000A70015 /* ADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CE7CBE1EFB6E3000A70015 /* ADView.m */; };
 		80CE7CC11EFB6E3D00A70015 /* ADView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CE7CC01EFB6E3D00A70015 /* ADView.xib */; };
 		80CE7CC31EFB717400A70015 /* 差号.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CE7CC21EFB717400A70015 /* 差号.png */; };
+		80DBEA9A20591D6200143615 /* ZYBankListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DBEA9920591D6200143615 /* ZYBankListController.m */; };
+		80DBEA9E205924AD00143615 /* ZYBankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DBEA9C205924AD00143615 /* ZYBankListCell.m */; };
+		80DBEA9F205924AD00143615 /* ZYBankListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DBEA9D205924AD00143615 /* ZYBankListCell.xib */; };
+		80DBEAA2205934A300143615 /* ZYPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DBEAA1205934A300143615 /* ZYPModel.m */; };
 		80E0E0E81EF6767800D4480B /* HomeHelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 80E0E0E71EF6767800D4480B /* HomeHelp.png */; };
 		80E0E0ED1EF677A900D4480B /* HelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E0E0EB1EF677A900D4480B /* HelpController.m */; };
 		80E0E0EE1EF677A900D4480B /* HelpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E0E0EC1EF677A900D4480B /* HelpController.xib */; };
@@ -1648,6 +1675,33 @@
 		8084C78A1EF02425006F123B /* RewardBankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardBankModel.m; sourceTree = "<group>"; };
 		808A04F41EF8199500E4F828 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		808A04F51EF8199500E4F828 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		808FBB67205A1506005E2C4B /* ZYBankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBankCell.h; sourceTree = "<group>"; };
+		808FBB68205A1506005E2C4B /* ZYBankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBankCell.m; sourceTree = "<group>"; };
+		808FBB6A205A1515005E2C4B /* ZYBankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYBankCell.xib; sourceTree = "<group>"; };
+		808FBB6C205A5804005E2C4B /* ZYWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYWebController.h; sourceTree = "<group>"; };
+		808FBB6D205A5804005E2C4B /* ZYWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYWebController.m; sourceTree = "<group>"; };
+		808FBB6F205A5DBB005E2C4B /* ZYTable2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTable2.h; sourceTree = "<group>"; };
+		808FBB70205A5DBB005E2C4B /* ZYTable2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTable2.m; sourceTree = "<group>"; };
+		808FBB72205A6565005E2C4B /* zy_push.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_push.png; sourceTree = "<group>"; };
+		808FBB73205A6565005E2C4B /* zy_push@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_push@2X.png"; sourceTree = "<group>"; };
+		808FBB74205A6565005E2C4B /* zy_push@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_push@3X.png"; sourceTree = "<group>"; };
+		808FBB78205A6882005E2C4B /* ZYDKController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYDKController.h; sourceTree = "<group>"; };
+		808FBB79205A6882005E2C4B /* ZYDKController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYDKController.m; sourceTree = "<group>"; };
+		808FBB7B205A6B29005E2C4B /* zy_zypt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_zypt.png; sourceTree = "<group>"; };
+		808FBB7C205A6B29005E2C4B /* zy_zypt@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_zypt@2X.png"; sourceTree = "<group>"; };
+		808FBB7D205A6B29005E2C4B /* zy_zypt@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_zypt@3X.png"; sourceTree = "<group>"; };
+		808FBB81205A6B5C005E2C4B /* zy_zypt_huise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_zypt_huise.png; sourceTree = "<group>"; };
+		808FBB82205A6B5C005E2C4B /* zy_zypt_huise@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_zypt_huise@2X.png"; sourceTree = "<group>"; };
+		808FBB83205A6B5C005E2C4B /* zy_zypt_huise@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_zypt_huise@3X.png"; sourceTree = "<group>"; };
+		808FBB88205A6F26005E2C4B /* zy_yinhang@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_yinhang@3X.png"; sourceTree = "<group>"; };
+		808FBB89205A6F26005E2C4B /* zy_yinhang@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_yinhang@2X.png"; sourceTree = "<group>"; };
+		808FBB8A205A6F26005E2C4B /* zy_rongbang@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_rongbang@3X.png"; sourceTree = "<group>"; };
+		808FBB8B205A6F26005E2C4B /* zy_yinhang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_yinhang.png; sourceTree = "<group>"; };
+		808FBB8C205A6F26005E2C4B /* zy_rongbang@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_rongbang@2X.png"; sourceTree = "<group>"; };
+		808FBB8D205A6F26005E2C4B /* zy_danka@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_danka@2X.png"; sourceTree = "<group>"; };
+		808FBB8E205A6F26005E2C4B /* zy_danka@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zy_danka@3X.png"; sourceTree = "<group>"; };
+		808FBB8F205A6F26005E2C4B /* zy_rongbang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_rongbang.png; sourceTree = "<group>"; };
+		808FBB90205A6F26005E2C4B /* zy_danka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_danka.png; sourceTree = "<group>"; };
 		809215521F009EF6007BB778 /* ShenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShenView.h; sourceTree = "<group>"; };
 		809215531F009EF6007BB778 /* ShenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShenView.m; sourceTree = "<group>"; };
 		809215551F009F01007BB778 /* ShenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShenView.xib; sourceTree = "<group>"; };
@@ -1838,6 +1892,13 @@
 		80CE7CBE1EFB6E3000A70015 /* ADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADView.m; sourceTree = "<group>"; };
 		80CE7CC01EFB6E3D00A70015 /* ADView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADView.xib; sourceTree = "<group>"; };
 		80CE7CC21EFB717400A70015 /* 差号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "差号.png"; sourceTree = "<group>"; };
+		80DBEA9820591D6200143615 /* ZYBankListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBankListController.h; sourceTree = "<group>"; };
+		80DBEA9920591D6200143615 /* ZYBankListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBankListController.m; sourceTree = "<group>"; };
+		80DBEA9B205924AD00143615 /* ZYBankListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBankListCell.h; sourceTree = "<group>"; };
+		80DBEA9C205924AD00143615 /* ZYBankListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBankListCell.m; sourceTree = "<group>"; };
+		80DBEA9D205924AD00143615 /* ZYBankListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYBankListCell.xib; sourceTree = "<group>"; };
+		80DBEAA0205934A300143615 /* ZYPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPModel.h; sourceTree = "<group>"; };
+		80DBEAA1205934A300143615 /* ZYPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPModel.m; sourceTree = "<group>"; };
 		80E0E0E71EF6767800D4480B /* HomeHelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeHelp.png; sourceTree = "<group>"; };
 		80E0E0EA1EF677A900D4480B /* HelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpController.h; sourceTree = "<group>"; };
 		80E0E0EB1EF677A900D4480B /* HelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpController.m; sourceTree = "<group>"; };
@@ -2339,6 +2400,16 @@
 		125213601E94E27600DD5C7A /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				808FBB87205A6F26005E2C4B /* 信用卡 贷款 图标导好的(融邦金服) */,
+				808FBB81205A6B5C005E2C4B /* zy_zypt_huise.png */,
+				808FBB82205A6B5C005E2C4B /* zy_zypt_huise@2X.png */,
+				808FBB83205A6B5C005E2C4B /* zy_zypt_huise@3X.png */,
+				808FBB7B205A6B29005E2C4B /* zy_zypt.png */,
+				808FBB7C205A6B29005E2C4B /* zy_zypt@2X.png */,
+				808FBB7D205A6B29005E2C4B /* zy_zypt@3X.png */,
+				808FBB72205A6565005E2C4B /* zy_push.png */,
+				808FBB73205A6565005E2C4B /* zy_push@2X.png */,
+				808FBB74205A6565005E2C4B /* zy_push@3X.png */,
 				120E6A801F1E239700BFF9E0 /* meituan_icon.png */,
 				120E6A7C1F1E14E300BFF9E0 /* shen1.png */,
 				120E6A7D1F1E14E300BFF9E0 /* shen2.png */,
@@ -3414,6 +3485,9 @@
 				1276FEC51E8BABDE00026B05 /* AdvisoryCell.h */,
 				1276FEC61E8BABDE00026B05 /* AdvisoryCell.m */,
 				1276FEC71E8BABDE00026B05 /* AdvisoryCell.xib */,
+				80DBEA9B205924AD00143615 /* ZYBankListCell.h */,
+				80DBEA9C205924AD00143615 /* ZYBankListCell.m */,
+				80DBEA9D205924AD00143615 /* ZYBankListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4303,6 +4377,22 @@
 			path = "极速办卡";
 			sourceTree = "<group>";
 		};
+		808FBB87205A6F26005E2C4B /* 信用卡 贷款 图标导好的(融邦金服) */ = {
+			isa = PBXGroup;
+			children = (
+				808FBB88205A6F26005E2C4B /* zy_yinhang@3X.png */,
+				808FBB89205A6F26005E2C4B /* zy_yinhang@2X.png */,
+				808FBB8A205A6F26005E2C4B /* zy_rongbang@3X.png */,
+				808FBB8B205A6F26005E2C4B /* zy_yinhang.png */,
+				808FBB8C205A6F26005E2C4B /* zy_rongbang@2X.png */,
+				808FBB8D205A6F26005E2C4B /* zy_danka@2X.png */,
+				808FBB8E205A6F26005E2C4B /* zy_danka@3X.png */,
+				808FBB8F205A6F26005E2C4B /* zy_rongbang.png */,
+				808FBB90205A6F26005E2C4B /* zy_danka.png */,
+			);
+			path = "信用卡 贷款 图标导好的(融邦金服)";
+			sourceTree = "<group>";
+		};
 		80A7339A1EE831D000E4FDDD /* 办卡奖励 */ = {
 			isa = PBXGroup;
 			children = (
@@ -4505,6 +4595,12 @@
 				80E991472057772400CB7203 /* ZYPTController.h */,
 				80E991492057772400CB7203 /* ZYPTController.m */,
 				80E991482057772400CB7203 /* ZYPTController.xib */,
+				80DBEA9820591D6200143615 /* ZYBankListController.h */,
+				80DBEA9920591D6200143615 /* ZYBankListController.m */,
+				808FBB6C205A5804005E2C4B /* ZYWebController.h */,
+				808FBB6D205A5804005E2C4B /* ZYWebController.m */,
+				808FBB78205A6882005E2C4B /* ZYDKController.h */,
+				808FBB79205A6882005E2C4B /* ZYDKController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4512,6 +4608,8 @@
 		80E9914A2057772400CB7203 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				80DBEAA0205934A300143615 /* ZYPModel.h */,
+				80DBEAA1205934A300143615 /* ZYPModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -4524,9 +4622,14 @@
 				80E991532057778900CB7203 /* ZYPTView.xib */,
 				80E9915520577CE700CB7203 /* ZYTable.h */,
 				80E9915620577CE700CB7203 /* ZYTable.m */,
+				808FBB6F205A5DBB005E2C4B /* ZYTable2.h */,
+				808FBB70205A5DBB005E2C4B /* ZYTable2.m */,
 				80FBAB432058BAF900450709 /* ZYPTCell.h */,
 				80FBAB442058BAF900450709 /* ZYPTCell.m */,
 				80FBAB452058BAF900450709 /* ZYPTCell.xib */,
+				808FBB67205A1506005E2C4B /* ZYBankCell.h */,
+				808FBB68205A1506005E2C4B /* ZYBankCell.m */,
+				808FBB6A205A1515005E2C4B /* ZYBankCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4809,6 +4912,7 @@
 				12B521FD1EF63DC4004EBE8E /* WeiboSDK.bundle in Resources */,
 				80C7140F1ED97DD7005274A9 /* 资源 12@0.5x.png in Resources */,
 				12A8D82C1EB33ABC007EF391 /* bussDay_weichat@2x.png in Resources */,
+				80DBEA9F205924AD00143615 /* ZYBankListCell.xib in Resources */,
 				80C714091ED97DD7005274A9 /* 资源 9@0.5x.png in Resources */,
 				80F4B94F1EF2F58F00AB0308 /* paipaiLoan@2x.png in Resources */,
 				12949C9B1EA495A000BDA991 /* WithdrawalView.xib in Resources */,
@@ -4892,12 +4996,14 @@
 				12A98E111E9F61030018B736 /* MineHeader.xib in Resources */,
 				125213621E94E28400DD5C7A /* main_back.png in Resources */,
 				12B523C91EF64A03004EBE8E /* HomeHeader.xib in Resources */,
+				808FBB6B205A1515005E2C4B /* ZYBankCell.xib in Resources */,
 				12A8D8231EB33ABC007EF391 /* bussDay_aplia.png in Resources */,
 				809215641F00B67A007BB778 /* 扫码收款.png in Resources */,
 				122CF4F11E9F69400025E82D /* verification.png in Resources */,
 				12ACA8AE1E8B42AB00AF74FC /* LaunchScreen.storyboard in Resources */,
 				1282AA4E1E9B6AFE0093B88F /* payserver.cer in Resources */,
 				12A8D80A1EB33A51007EF391 /* blue_btn_selected@2x.png in Resources */,
+				808FBB98205A6F26005E2C4B /* zy_rongbang.png in Resources */,
 				80C714171EDE596B005274A9 /* tickbox_red.png in Resources */,
 				80F4B8F41EF2F07F00AB0308 /* cat_4@2x.png in Resources */,
 				126773B11EA0D01F0058CC14 /* newAtt_photo.png in Resources */,
@@ -4912,6 +5018,7 @@
 				80C713F91ED97DD7005274A9 /* 资源 1@0.5x.png in Resources */,
 				12B522361EF63FF5004EBE8E /* Default.png in Resources */,
 				12A8D8251EB33ABC007EF391 /* bussDay_down.png in Resources */,
+				808FBB85205A6B5C005E2C4B /* zy_zypt_huise@2X.png in Resources */,
 				8027DA0C1EF36BA1009A43B6 /* 引导1.jpg in Resources */,
 				120E6A7E1F1E14E300BFF9E0 /* shen1.png in Resources */,
 				80F4B9751EF2F96B00AB0308 /* money_new_day3@2x.png in Resources */,
@@ -4932,6 +5039,7 @@
 				80100DD21EF8B80500F42EBE /* 已认证@0.5x-8.png in Resources */,
 				80C713CB1ED94AF3005274A9 /* 资源 30@0.5x.png in Resources */,
 				12A509021EF15A750073E2EC /* aaaa_add.png in Resources */,
+				808FBB76205A6565005E2C4B /* zy_push@2X.png in Resources */,
 				12B522141EF63DC4004EBE8E /* 资源 72@0.5x.png in Resources */,
 				122CF4EF1E9F69400025E82D /* loginbox_short.png in Resources */,
 				122CF5031E9F69500025E82D /* edit.png in Resources */,
@@ -4941,6 +5049,7 @@
 				80AF61721EC997D40064B4F8 /* CreditInfoHead.xib in Resources */,
 				122CF4E01E9F658E0025E82D /* TSLocateView.xib in Resources */,
 				80C713CA1ED94AF3005274A9 /* 资源 30.png in Resources */,
+				808FBB77205A6565005E2C4B /* zy_push@3X.png in Resources */,
 				8027DA031EF3008F009A43B6 /* line_down.png in Resources */,
 				126773AF1EA0D01F0058CC14 /* newAtt_next.png in Resources */,
 				80CE7CC31EFB717400A70015 /* 差号.png in Resources */,
@@ -4962,6 +5071,7 @@
 				80F3EE731EBAC749002CEEE9 /* ApplicationViewController.xib in Resources */,
 				12A98E181E9F61220018B736 /* BankListCell.xib in Resources */,
 				8093F5351EEE5C5C00C0CE1B /* CardSectionHead.xib in Resources */,
+				808FBB96205A6F26005E2C4B /* zy_danka@2X.png in Resources */,
 				80100DE61EF8E86600F42EBE /* erweima(1).png in Resources */,
 				80C713FB1ED97DD7005274A9 /* 资源 2@0.5x.png in Resources */,
 				122CF5051E9F69500025E82D /* money.png in Resources */,
@@ -4987,6 +5097,7 @@
 				122CF4DE1E9F658E0025E82D /* ProvincesAndCities.plist in Resources */,
 				122CF5011E9F69500025E82D /* car.png in Resources */,
 				12E718DF1E95D00F00959D77 /* LoanFinCollectionHead.xib in Resources */,
+				808FBB7F205A6B29005E2C4B /* zy_zypt@2X.png in Resources */,
 				12E7193C1E96378800959D77 /* CreditCell3.xib in Resources */,
 				12B522321EF63FE0004EBE8E /* 水族服务.jpg in Resources */,
 				12B5220D1EF63DC4004EBE8E /* UMSocialSDKResources.bundle in Resources */,
@@ -5009,11 +5120,13 @@
 				80F056DE1F0CAF5D00A32051 /* UMTotalController.xib in Resources */,
 				12A509031EF15A750073E2EC /* aaaa_right.png in Resources */,
 				80C714231EDE670D005274A9 /* 3.png in Resources */,
+				808FBB93205A6F26005E2C4B /* zy_rongbang@3X.png in Resources */,
 				80ED8B221EF75BBB0075531F /* FWGWController.xib in Resources */,
 				80C7141F1EDE62F7005274A9 /* mima.png in Resources */,
 				80C7142F1EDE70BA005274A9 /* 资源 8@0.5x(1).png in Resources */,
 				80F4B95E1EF2F58F00AB0308 /* 箭头@2x.png in Resources */,
 				126773821EA0A0E40058CC14 /* orange_button_press.png in Resources */,
+				808FBB91205A6F26005E2C4B /* zy_yinhang@3X.png in Resources */,
 				80ED8B361EF76FEE0075531F /* 推荐@0.5x.png in Resources */,
 				8017B6A61ED7EA570052CA30 /* 资源 52.png in Resources */,
 				12509D1F1EA1BDB1004F939F /* NewScanView.xib in Resources */,
@@ -5043,6 +5156,7 @@
 				80C714211EDE6704005274A9 /* 3@0.5x.png in Resources */,
 				80C713C91ED94AF3005274A9 /* 资源 29@2x.png in Resources */,
 				80AF66CE1EEBD463006CC581 /* 3@0.5x(1).png in Resources */,
+				808FBB75205A6565005E2C4B /* zy_push.png in Resources */,
 				80F4B9541EF2F58F00AB0308 /* 寿险贷@2x.png in Resources */,
 				80C713D61ED94AF4005274A9 /* 资源 34.png in Resources */,
 				122CF5221E9F69830025E82D /* blue_button_press.png in Resources */,
@@ -5130,9 +5244,11 @@
 				12B521FF1EF63DC4004EBE8E /* read_me.txt in Resources */,
 				80C713CE1ED94AF3005274A9 /* 资源 31@0.5x.png in Resources */,
 				12A8D8071EB33A51007EF391 /* 01.png in Resources */,
+				808FBB92205A6F26005E2C4B /* zy_yinhang@2X.png in Resources */,
 				80B609CD1EFA01760005D91A /* home_hood@0.5x.png in Resources */,
 				80ED8B3A1EF773680075531F /* message@0.5x-8.png in Resources */,
 				80100DE41EF8C9FA00F42EBE /* 个人头像@0.5x-8.png in Resources */,
+				808FBB86205A6B5C005E2C4B /* zy_zypt_huise@3X.png in Resources */,
 				80F4B9571EF2F58F00AB0308 /* 房主类@3x.png in Resources */,
 				80A733931EE7CE8D00E4FDDD /* 泰山.jpg in Resources */,
 				12B523C71EF64A03004EBE8E /* HomeFooter.xib in Resources */,
@@ -5154,6 +5270,7 @@
 				80AF66F41EEC242B006CC581 /* AddCardController.xib in Resources */,
 				8093F5481EEEC63A00C0CE1B /* qricon.png in Resources */,
 				12B522131EF63DC4004EBE8E /* 资源 72.png in Resources */,
+				808FBB99205A6F26005E2C4B /* zy_danka.png in Resources */,
 				126773831EA0A0E40058CC14 /* password.png in Resources */,
 				12A8D80E1EB33A51007EF391 /* dianpuxinxi_press.png in Resources */,
 				12FBBE041F1C520100775590 /* 融邦金服@2x.png in Resources */,
@@ -5182,6 +5299,7 @@
 				122CF5141E9F696F0025E82D /* feedback.png in Resources */,
 				12A8D7F31EB339C7007EF391 /* newPay_alipy@2x.png in Resources */,
 				12B521EA1EF63DC4004EBE8E /* pageControlCurrentDot@3x.png in Resources */,
+				808FBB80205A6B29005E2C4B /* zy_zypt@3X.png in Resources */,
 				80AF66DB1EEBE6BE006CC581 /* CardHeadView.xib in Resources */,
 				80E0E0F81EF684B900D4480B /* MessageCell.xib in Resources */,
 				80C713D51ED94AF4005274A9 /* 资源 33@2x.png in Resources */,
@@ -5202,6 +5320,7 @@
 				8038DC901F0B68ED00D8431B /* naviBG1.png in Resources */,
 				8093F52E1EEE3C9100C0CE1B /* 资源 下拉@0.5x.png in Resources */,
 				12B521EC1EF63DC4004EBE8E /* pageControlDot@3x.png in Resources */,
+				808FBB95205A6F26005E2C4B /* zy_rongbang@2X.png in Resources */,
 				80F4B97A1EF2F96B00AB0308 /* money_new_phone@3x.png in Resources */,
 				80F4B8EC1EF2F07F00AB0308 /* cat_1@3x.png in Resources */,
 				80F4B8EF1EF2F07F00AB0308 /* cat_2@3x.png in Resources */,
@@ -5251,15 +5370,19 @@
 				80C713AC1ED9218D005274A9 /* 资源 47@0.5x.png in Resources */,
 				80C714071ED97DD7005274A9 /* 资源 8@0.5x.png in Resources */,
 				805DBCAF1F061FD000F61729 /* 认证中.png in Resources */,
+				808FBB94205A6F26005E2C4B /* zy_yinhang.png in Resources */,
 				80F4B7771EF2B50200AB0308 /* qq.png in Resources */,
 				80F4B7901EF2D01200AB0308 /* profile.png in Resources */,
 				8017B6AA1ED7EA570052CA30 /* 资源 54.png in Resources */,
+				808FBB97205A6F26005E2C4B /* zy_danka@3X.png in Resources */,
 				126773331EA062200058CC14 /* NewMyQrViewController.xib in Resources */,
 				80E9914C2057772400CB7203 /* ZYPTController.xib in Resources */,
 				12B521ED1EF63DC4004EBE8E /* placeholder@2x.png in Resources */,
+				808FBB7E205A6B29005E2C4B /* zy_zypt.png in Resources */,
 				8027DA181EF3BF77009A43B6 /* 资源 98@0.5x.png in Resources */,
 				12A8D8111EB33A51007EF391 /* redPacket.png in Resources */,
 				8084C7671EEFB36A006F123B /* 资源 68@0.5x.png in Resources */,
+				808FBB84205A6B5C005E2C4B /* zy_zypt_huise.png in Resources */,
 				80F4B8F11EF2F07F00AB0308 /* cat_3@2x.png in Resources */,
 				80F4B8F51EF2F07F00AB0308 /* cat_4@3x.png in Resources */,
 				80C7142D1EDE70AA005274A9 /* 资源 10@0.5x(1).png in Resources */,
@@ -5332,6 +5455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A98E031E9F60B30018B736 /* NewBankListController.m in Sources */,
+				808FBB7A205A6882005E2C4B /* ZYDKController.m in Sources */,
 				80AF66F31EEC242B006CC581 /* AddCardController.m in Sources */,
 				80AF61571EC997BF0064B4F8 /* IntegralModel.m in Sources */,
 				12607C451E97424200F6BDC8 /* CreditAddController.m in Sources */,
@@ -5380,10 +5504,12 @@
 				80243CBD1EE14285008EE029 /* CrediCardLinkController.m in Sources */,
 				12A5090E1EF15A750073E2EC /* CalendarMonthCollectionViewLayout.m in Sources */,
 				1276FE8D1E8B823C00026B05 /* AdvisoryNavBar.m in Sources */,
+				808FBB6E205A5804005E2C4B /* ZYWebController.m in Sources */,
 				12B523921EF64938004EBE8E /* DoctorController.m in Sources */,
 				80F4B76A1EF25A8100AB0308 /* ScanCodeTool.m in Sources */,
 				80E9914D2057772400CB7203 /* ZYPTController.m in Sources */,
 				12A508FC1EF15A750073E2EC /* TransDetailCell.m in Sources */,
+				80DBEAA2205934A300143615 /* ZYPModel.m in Sources */,
 				12B523991EF64950004EBE8E /* WebController.m in Sources */,
 				12A508FE1EF15A750073E2EC /* TransWeekCell.m in Sources */,
 				122CF53A1E9F6AD30025E82D /* BankListModel.m in Sources */,
@@ -5404,6 +5530,7 @@
 				8027DA1C1EF3C101009A43B6 /* LoadViewController.m in Sources */,
 				12ACA8DD1E8B448500AF74FC /* BaseView.m in Sources */,
 				12B522171EF63DC4004EBE8E /* AFNManager.m in Sources */,
+				808FBB69205A1506005E2C4B /* ZYBankCell.m in Sources */,
 				12B521EE1EF63DC4004EBE8E /* SDCollectionViewCell.m in Sources */,
 				12A4BCA61ECC036900DFDB53 /* CreditCell6.m in Sources */,
 				12B523C41EF64A03004EBE8E /* HomeDataSource.m in Sources */,
@@ -5443,6 +5570,7 @@
 				8093F5441EEE834C00C0CE1B /* BankRewardModel.m in Sources */,
 				12A98E101E9F61030018B736 /* MineHeader.m in Sources */,
 				12ACA8A01E8B42AB00AF74FC /* main.m in Sources */,
+				80DBEA9A20591D6200143615 /* ZYBankListController.m in Sources */,
 				12E7194A1E963E8900959D77 /* IntegralController.m in Sources */,
 				803B0A19204E1ED7005A48D4 /* ShareLinkController.m in Sources */,
 				12B521E31EF63DC4004EBE8E /* CKAlertManager.m in Sources */,
@@ -5461,6 +5589,7 @@
 				80E8F824204D1D35009028DE /* RBJFHeader.m in Sources */,
 				12949CB01EA49B7900BDA991 /* WithdrawalPassController.m in Sources */,
 				12607C521E97465C00F6BDC8 /* UITextField+Extension.m in Sources */,
+				80DBEA9E205924AD00143615 /* ZYBankListCell.m in Sources */,
 				80F4B7891EF2CECC00AB0308 /* AboutUsViewController.m in Sources */,
 				80E0E0FD1EF6869300D4480B /* MessageListModel.m in Sources */,
 				12E718DC1E95D00F00959D77 /* LoanFinCollectionCell.m in Sources */,
@@ -5574,6 +5703,7 @@
 				12ACA8D51E8B447900AF74FC /* BaseNavigationController.m in Sources */,
 				12E7194F1E963F2B00959D77 /* IntegralShop.m in Sources */,
 				12B522161EF63DC4004EBE8E /* AFNFileModel.m in Sources */,
+				808FBB71205A5DBB005E2C4B /* ZYTable2.m in Sources */,
 				12E719071E96178B00959D77 /* LoanFinTable.m in Sources */,
 				80E9915720577CE700CB7203 /* ZYTable.m in Sources */,
 				122CF4D31E9F65180025E82D /* NewChangeBankController.m in Sources */,

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平安标准卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-kr-Hkx">
-                        <rect key="frame" x="103" y="10" width="76.5" height="21"/>
+                        <rect key="frame" x="103" y="10" width="193" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="cd6-pg-DMb"/>
                         </constraints>
@@ -97,6 +98,7 @@
                     <constraint firstItem="C4I-ZQ-Jzg" firstAttribute="leading" secondItem="Oxf-hk-S3m" secondAttribute="trailing" constant="10" id="Qmb-4A-n6l"/>
                     <constraint firstItem="Txh-AA-cse" firstAttribute="top" secondItem="6Px-kr-Hkx" secondAttribute="bottom" constant="5" id="cu0-Bk-Z37"/>
                     <constraint firstAttribute="trailing" secondItem="PZo-UJ-LG8" secondAttribute="trailing" constant="19" id="dI7-SV-XYq"/>
+                    <constraint firstItem="z0Q-vS-BWc" firstAttribute="leading" secondItem="6Px-kr-Hkx" secondAttribute="trailing" constant="50" id="ecR-uk-DMY"/>
                     <constraint firstItem="C4I-ZQ-Jzg" firstAttribute="top" secondItem="Txh-AA-cse" secondAttribute="bottom" constant="5" id="fCv-1a-e2N"/>
                     <constraint firstItem="PZo-UJ-LG8" firstAttribute="top" secondItem="z0Q-vS-BWc" secondAttribute="bottom" constant="13" id="gJl-dm-KUE"/>
                     <constraint firstItem="Oxf-hk-S3m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="r0X-yb-mLY"/>

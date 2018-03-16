@@ -8,6 +8,8 @@
 
 #import "NSString+NetString.h"
 
+#define pHost          @"http://rbjf.oudapay.com:8116/loan"           // 实名认证
+
 //#define kHost @"http://223.98.189.173:8080/payment_app"   // 孝欢本地
 #define kHost          @"http://lkl.oudapay.com:8108/payment_app"    // 融邦金服正式
 #define NHost          @"http://lkl.oudapay.com:8107/loan"           // 实名认证
@@ -89,9 +91,15 @@
 + (NSString *)getChangePwd2_URL {
     return [NSString stringWithFormat:@"%@%@",kHost,changePwd2_URL];
 }
+
++ (NSString *)getUplodeImage_URL {
+    return [NSString stringWithFormat:@"%@%@",pHost,uplodeImage_URL];
+}
+/*
 + (NSString *)getUplodeImage_URL {
     return [NSString stringWithFormat:@"%@%@",NHost,uplodeImage_URL];
 }
+ */
 + (NSString *)get_fileautograph_url{
     return [NSString stringWithFormat:@"%@%@",THost,fileautograph_URL];
 }

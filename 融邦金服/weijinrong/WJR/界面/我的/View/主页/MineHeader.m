@@ -22,6 +22,8 @@
     view.frame = frame;
     view.height = ScreenWidth / 2;
     view.icon = icon;
+    view.iconBtn.layer.masksToBounds = YES;
+    view.iconBtn.layer.cornerRadius = 55;
     view.login = login;
     view.name.text = GetAccount;
     return view;

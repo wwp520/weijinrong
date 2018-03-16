@@ -10,12 +10,15 @@
 #import "ZYPTView.h"
 #import "AdvisoryScroll.h"
 #import "ZYTable.h"
+#import "ZYTable2.h"
+#import "ZYPModel.h"
 
 @interface ZYPTController ()
 @property (nonatomic, strong) ZYPTView *zyView;
 @property (nonatomic, strong) AdvisoryScroll *scroll;
 @property (nonatomic, strong) ZYTable *table1;
-@property (nonatomic, strong) ZYTable *table2;
+@property (nonatomic, strong) ZYTable2 *table2;
+@property (nonatomic,strong) NSMutableArray *models;
 @end
 
 @implementation ZYPTController
@@ -23,12 +26,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"展业平台";
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self.view setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     [self.navigationItem setTitleView:[self zyView]];
     [self scroll];
     [self table1];
     [self table2];
 }
+
+/*
+- (NSMutableArray *)models {
+    if (!_models) {
+        
+        NSArray *title = @[@[@"标题1",@"表弟2"],@[@"标题1",@"表弟2"]];
+        NSArray *desc = @[@[@"标题1",@"表弟2"],@[@"标题1",@"表弟2"]];
+        NSArray *icon = @[@[@"标题1",@"表弟2"],@[@"标题1",@"表弟2"]];
+        
+        for (int x=0; x<title.count; x++) {
+            NSMutableArray *arr = [[NSMutableArray alloc]init];
+            for (int i=0; i<[title[x] count]; i++) {
+                ZYPModel *model = [[ZYPModel alloc]init];
+                model.icon = icon[x][i];
+                model.title = title[x][i];
+                [arr addObject:model];
+            }
+            [_models addObject:arr];
+        }
+    }
+    return _models;
+}
+ */
 
 - (ZYPTView *)zyView {
     if (!_zyView) {
@@ -44,6 +70,7 @@
 //                }
             }
         }];
+       // _zyView.models = _models[0];
     }
     return _zyView;
 }
@@ -60,13 +87,9 @@
 //                if (self.dataArray2.count == 0) {
 //                    [self headerRefreshing2];
 //                }
-            }else if (i == 2) {
-//                if (self.dataArray3.count == 0) {
-//                    [self headerRefreshing3];
-//                }
             }
         }];
-        [_scroll setContentSize:CGSizeMake(ScreenWidth * 3, ScreenHeight - 64 - 49)];
+        [_scroll setContentSize:CGSizeMake(ScreenWidth * 2, ScreenHeight - 64 - 49)];
         [_scroll setPagingEnabled:YES];
         _scroll.showsHorizontalScrollIndicator = NO;
         [self.view addSubview:_scroll];
@@ -77,13 +100,16 @@
 - (ZYTable *)table1 {
     if (!_table1) {
         _table1 = [ZYTable initWithFrame:CGRectMake(0, 0, ScreenWidth, self.scroll.height)];
+      //  _table1.tag = 1;
         [self.scroll addSubview:_table1];
     }
     return _table1;
 }
-- (ZYTable *)table2 {
+
+- (ZYTable2 *)table2 {
     if (!_table2) {
-        _table2 = [ZYTable initWithFrame:CGRectMake(ScreenWidth, 0, ScreenWidth, self.scroll.height)];
+        _table2 = [ZYTable2 initWithFrame:CGRectMake(ScreenWidth, 0, ScreenWidth, self.scroll.height)];
+      //  _table2.tag = 2;
         [self.scroll addSubview:_table2];
     }
     return _table2;
