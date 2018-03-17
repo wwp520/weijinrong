@@ -533,6 +533,13 @@
 		803B0A1A204E1ED7005A48D4 /* ShareLinkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803B0A18204E1ED7005A48D4 /* ShareLinkController.xib */; };
 		803B0A1E204E6E39005A48D4 /* CodeLinkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B0A1C204E6E39005A48D4 /* CodeLinkController.m */; };
 		803B0A1F204E6E39005A48D4 /* CodeLinkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803B0A1D204E6E39005A48D4 /* CodeLinkController.xib */; };
+		805C5BF9205BC6B800A8DBD1 /* OwnerLifeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BE9205BC6B800A8DBD1 /* OwnerLifeController.m */; };
+		805C5BFA205BC6B800A8DBD1 /* LifeLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BEA205BC6B800A8DBD1 /* LifeLoanController.m */; };
+		805C5BFB205BC6B800A8DBD1 /* OwnerLandController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BF0205BC6B800A8DBD1 /* OwnerLandController.m */; };
+		805C5BFC205BC6B800A8DBD1 /* HouseLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BF1205BC6B800A8DBD1 /* HouseLoanController.m */; };
+		805C5BFD205BC6B800A8DBD1 /* LoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BF3205BC6B800A8DBD1 /* LoanController.m */; };
+		805C5BFE205BC6B800A8DBD1 /* CarLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BF7205BC6B800A8DBD1 /* CarLoanController.m */; };
+		805C5BFF205BC6B800A8DBD1 /* OwnerCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805C5BF8205BC6B800A8DBD1 /* OwnerCarController.m */; };
 		805DBCAD1F05F81D00F61729 /* UpdateModel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 805DBCAC1F05F81D00F61729 /* UpdateModel1.m */; };
 		805DBCAF1F061FD000F61729 /* 认证中.png in Resources */ = {isa = PBXBuildFile; fileRef = 805DBCAE1F061FD000F61729 /* 认证中.png */; };
 		805DBCB11F061FD500F61729 /* 认证中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805DBCB01F061FD500F61729 /* 认证中@2x.png */; };
@@ -614,6 +621,9 @@
 		80AB819D1EF10244004B5C72 /* RewardListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AB819C1EF10244004B5C72 /* RewardListModel.m */; };
 		80AB81A11EF11FAE004B5C72 /* LinkURLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AB819F1EF11FAE004B5C72 /* LinkURLController.m */; };
 		80AB81A21EF11FAE004B5C72 /* LinkURLController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB81A01EF11FAE004B5C72 /* LinkURLController.xib */; };
+		80AC8232205D1CDE00AE57FF /* LoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AC822F205D1CDE00AE57FF /* LoadModel.m */; };
+		80AC8233205D1CDE00AE57FF /* LoadRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AC8231205D1CDE00AE57FF /* LoadRequestModel.m */; };
+		80AC8236205D1D3700AE57FF /* LoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AC8235205D1D3700AE57FF /* LoadCell.m */; };
 		80AF61531EC997BF0064B4F8 /* AddEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AF614A1EC997BF0064B4F8 /* AddEmail.m */; };
 		80AF61541EC997BF0064B4F8 /* CardArrangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AF614C1EC997BF0064B4F8 /* CardArrangeModel.m */; };
 		80AF61551EC997BF0064B4F8 /* CardManagerDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AF614E1EC997BF0064B4F8 /* CardManagerDetailModel.m */; };
@@ -1632,6 +1642,20 @@
 		803B0A1B204E6E39005A48D4 /* CodeLinkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeLinkController.h; sourceTree = "<group>"; };
 		803B0A1C204E6E39005A48D4 /* CodeLinkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeLinkController.m; sourceTree = "<group>"; };
 		803B0A1D204E6E39005A48D4 /* CodeLinkController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeLinkController.xib; sourceTree = "<group>"; };
+		805C5BE9205BC6B800A8DBD1 /* OwnerLifeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerLifeController.m; sourceTree = "<group>"; };
+		805C5BEA205BC6B800A8DBD1 /* LifeLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeLoanController.m; sourceTree = "<group>"; };
+		805C5BEB205BC6B800A8DBD1 /* OwnerLifeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnerLifeController.h; sourceTree = "<group>"; };
+		805C5BEC205BC6B800A8DBD1 /* LifeLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeLoanController.h; sourceTree = "<group>"; };
+		805C5BEE205BC6B800A8DBD1 /* OwnerLandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnerLandController.h; sourceTree = "<group>"; };
+		805C5BEF205BC6B800A8DBD1 /* HouseLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseLoanController.h; sourceTree = "<group>"; };
+		805C5BF0205BC6B800A8DBD1 /* OwnerLandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerLandController.m; sourceTree = "<group>"; };
+		805C5BF1205BC6B800A8DBD1 /* HouseLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseLoanController.m; sourceTree = "<group>"; };
+		805C5BF2205BC6B800A8DBD1 /* LoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanController.h; sourceTree = "<group>"; };
+		805C5BF3205BC6B800A8DBD1 /* LoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanController.m; sourceTree = "<group>"; };
+		805C5BF5205BC6B800A8DBD1 /* CarLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarLoanController.h; sourceTree = "<group>"; };
+		805C5BF6205BC6B800A8DBD1 /* OwnerCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnerCarController.h; sourceTree = "<group>"; };
+		805C5BF7205BC6B800A8DBD1 /* CarLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarLoanController.m; sourceTree = "<group>"; };
+		805C5BF8205BC6B800A8DBD1 /* OwnerCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerCarController.m; sourceTree = "<group>"; };
 		805DBCAB1F05F81D00F61729 /* UpdateModel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateModel1.h; sourceTree = "<group>"; };
 		805DBCAC1F05F81D00F61729 /* UpdateModel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateModel1.m; sourceTree = "<group>"; };
 		805DBCAE1F061FD000F61729 /* 认证中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "认证中.png"; sourceTree = "<group>"; };
@@ -1742,6 +1766,12 @@
 		80AB819E1EF11FAE004B5C72 /* LinkURLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkURLController.h; sourceTree = "<group>"; };
 		80AB819F1EF11FAE004B5C72 /* LinkURLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkURLController.m; sourceTree = "<group>"; };
 		80AB81A01EF11FAE004B5C72 /* LinkURLController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkURLController.xib; sourceTree = "<group>"; };
+		80AC822E205D1CDE00AE57FF /* LoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadModel.h; sourceTree = "<group>"; };
+		80AC822F205D1CDE00AE57FF /* LoadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadModel.m; sourceTree = "<group>"; };
+		80AC8230205D1CDE00AE57FF /* LoadRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadRequestModel.h; sourceTree = "<group>"; };
+		80AC8231205D1CDE00AE57FF /* LoadRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadRequestModel.m; sourceTree = "<group>"; };
+		80AC8234205D1D3700AE57FF /* LoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadCell.h; sourceTree = "<group>"; };
+		80AC8235205D1D3700AE57FF /* LoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadCell.m; sourceTree = "<group>"; };
 		80AF61491EC997BF0064B4F8 /* AddEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEmail.h; sourceTree = "<group>"; };
 		80AF614A1EC997BF0064B4F8 /* AddEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEmail.m; sourceTree = "<group>"; };
 		80AF614B1EC997BF0064B4F8 /* CardArrangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardArrangeModel.h; sourceTree = "<group>"; };
@@ -2390,6 +2420,8 @@
 			isa = PBXGroup;
 			children = (
 				12E719011E96178B00959D77 /* Table */,
+				80AC8234205D1D3700AE57FF /* LoadCell.h */,
+				80AC8235205D1D3700AE57FF /* LoadCell.m */,
 				1252135D1E94E0B200DD5C7A /* LoanFinIcon.h */,
 				1252135E1E94E0B200DD5C7A /* LoanFinIcon.m */,
 				12E718D21E95D00F00959D77 /* Collection */,
@@ -3267,6 +3299,10 @@
 		12ACA8BA1E8B442800AF74FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				80AC822E205D1CDE00AE57FF /* LoadModel.h */,
+				80AC822F205D1CDE00AE57FF /* LoadModel.m */,
+				80AC8230205D1CDE00AE57FF /* LoadRequestModel.h */,
+				80AC8231205D1CDE00AE57FF /* LoadRequestModel.m */,
 				805DBCAB1F05F81D00F61729 /* UpdateModel1.h */,
 				805DBCAC1F05F81D00F61729 /* UpdateModel1.m */,
 				808A04F41EF8199500E4F828 /* UserModel.h */,
@@ -3956,6 +3992,7 @@
 		12B522481EF64938004EBE8E /* 不重要的 */ = {
 			isa = PBXGroup;
 			children = (
+				805C5BE7205BC6B800A8DBD1 /* 平安普惠 */,
 				12B523111EF64938004EBE8E /* 鱼之道:私人医生 */,
 			);
 			path = "不重要的";
@@ -4352,6 +4389,52 @@
 				80243CBC1EE14285008EE029 /* CrediCardLinkController.m */,
 			);
 			path = "信用卡";
+			sourceTree = "<group>";
+		};
+		805C5BE7205BC6B800A8DBD1 /* 平安普惠 */ = {
+			isa = PBXGroup;
+			children = (
+				805C5BE8205BC6B800A8DBD1 /* LifeLoan */,
+				805C5BED205BC6B800A8DBD1 /* HouseLoan */,
+				805C5BF2205BC6B800A8DBD1 /* LoanController.h */,
+				805C5BF3205BC6B800A8DBD1 /* LoanController.m */,
+				805C5BF4205BC6B800A8DBD1 /* CarLoan */,
+			);
+			name = "平安普惠";
+			path = "鱼之道:私人医生/平安普惠";
+			sourceTree = "<group>";
+		};
+		805C5BE8205BC6B800A8DBD1 /* LifeLoan */ = {
+			isa = PBXGroup;
+			children = (
+				805C5BE9205BC6B800A8DBD1 /* OwnerLifeController.m */,
+				805C5BEA205BC6B800A8DBD1 /* LifeLoanController.m */,
+				805C5BEB205BC6B800A8DBD1 /* OwnerLifeController.h */,
+				805C5BEC205BC6B800A8DBD1 /* LifeLoanController.h */,
+			);
+			path = LifeLoan;
+			sourceTree = "<group>";
+		};
+		805C5BED205BC6B800A8DBD1 /* HouseLoan */ = {
+			isa = PBXGroup;
+			children = (
+				805C5BEE205BC6B800A8DBD1 /* OwnerLandController.h */,
+				805C5BEF205BC6B800A8DBD1 /* HouseLoanController.h */,
+				805C5BF0205BC6B800A8DBD1 /* OwnerLandController.m */,
+				805C5BF1205BC6B800A8DBD1 /* HouseLoanController.m */,
+			);
+			path = HouseLoan;
+			sourceTree = "<group>";
+		};
+		805C5BF4205BC6B800A8DBD1 /* CarLoan */ = {
+			isa = PBXGroup;
+			children = (
+				805C5BF5205BC6B800A8DBD1 /* CarLoanController.h */,
+				805C5BF6205BC6B800A8DBD1 /* OwnerCarController.h */,
+				805C5BF7205BC6B800A8DBD1 /* CarLoanController.m */,
+				805C5BF8205BC6B800A8DBD1 /* OwnerCarController.m */,
+			);
+			path = CarLoan;
 			sourceTree = "<group>";
 		};
 		8063A1F51ECE8F1600EEB74D /* 进度查询 */ = {
@@ -5460,6 +5543,7 @@
 				80AF61571EC997BF0064B4F8 /* IntegralModel.m in Sources */,
 				12607C451E97424200F6BDC8 /* CreditAddController.m in Sources */,
 				1267736F1EA09ECB0058CC14 /* CodeModel.m in Sources */,
+				805C5BFC205BC6B800A8DBD1 /* HouseLoanController.m in Sources */,
 				80AF616C1EC997D40064B4F8 /* CreditInfoView.m in Sources */,
 				1276FDEE1E8B541200026B05 /* UIView+Extension.m in Sources */,
 				12E719391E96378800959D77 /* CreditCell2.m in Sources */,
@@ -5476,9 +5560,11 @@
 				80FBAB462058BAF900450709 /* ZYPTCell.m in Sources */,
 				12A98E121E9F61030018B736 /* MineTable.m in Sources */,
 				12A98E0E1E9F61030018B736 /* MineFooter.m in Sources */,
+				805C5BFF205BC6B800A8DBD1 /* OwnerCarController.m in Sources */,
 				801AE9431F02631D00F84EAA /* QQEmaiLinkController.m in Sources */,
 				122FCCF61E9DDD5B00595779 /* ForgetController.m in Sources */,
 				12ACA8CE1E8B447200AF74FC /* BaseCell.m in Sources */,
+				805C5BF9205BC6B800A8DBD1 /* OwnerLifeController.m in Sources */,
 				1276FEBB1E8BAA8200026B05 /* AdvisoryScroll.m in Sources */,
 				80E0E0F91EF684B900D4480B /* PushListController.m in Sources */,
 				122FCCF11E9DDBD600595779 /* UIButton+Extension.m in Sources */,
@@ -5512,6 +5598,7 @@
 				80DBEAA2205934A300143615 /* ZYPModel.m in Sources */,
 				12B523991EF64950004EBE8E /* WebController.m in Sources */,
 				12A508FE1EF15A750073E2EC /* TransWeekCell.m in Sources */,
+				805C5BFB205BC6B800A8DBD1 /* OwnerLandController.m in Sources */,
 				122CF53A1E9F6AD30025E82D /* BankListModel.m in Sources */,
 				809215541F009EF6007BB778 /* ShenView.m in Sources */,
 				8027DA071EF32F12009A43B6 /* CardWelfaresCell.m in Sources */,
@@ -5599,6 +5686,7 @@
 				12B522191EF63DC4004EBE8E /* KKManager.m in Sources */,
 				125213541E94DEEE00DD5C7A /* FinancialController.m in Sources */,
 				80F3EE821EC196D2002CEEE9 /* BillViewCell.m in Sources */,
+				80AC8236205D1D3700AE57FF /* LoadCell.m in Sources */,
 				1282AA4A1E9B64F60093B88F /* DeviceModel.m in Sources */,
 				12949C9F1EA4960400BDA991 /* MySelfModel.m in Sources */,
 				80AF61541EC997BF0064B4F8 /* CardArrangeModel.m in Sources */,
@@ -5610,6 +5698,7 @@
 				8063A1E91ECC7B0100EEB74D /* IntegralShopModel.m in Sources */,
 				12B523CE1EF64A03004EBE8E /* ScanCodePayHeadView.m in Sources */,
 				12A5090A1EF15A750073E2EC /* CalendarDayCell.m in Sources */,
+				805C5BFA205BC6B800A8DBD1 /* LifeLoanController.m in Sources */,
 				12A4BCAF1ECC50F800DFDB53 /* IntegralListTable.m in Sources */,
 				805DBCAD1F05F81D00F61729 /* UpdateModel1.m in Sources */,
 				12949C911EA4755900BDA991 /* Code39.m in Sources */,
@@ -5661,16 +5750,19 @@
 				80C3AA961EFA3FE4001AF07F /* InputFooterView.m in Sources */,
 				12607C561E975A1300F6BDC8 /* CreditInfoController.m in Sources */,
 				12B523BD1EF64A03004EBE8E /* HomeCell.m in Sources */,
+				805C5BFD205BC6B800A8DBD1 /* LoanController.m in Sources */,
 				12949C581EA473FA00BDA991 /* AlipayPayModel.m in Sources */,
 				12E719261E962F6800959D77 /* CardWelfareController.m in Sources */,
 				80A7339E1EE8320E00E4FDDD /* BankRewardController.m in Sources */,
 				8017B6B11ED826220052CA30 /* CardLinkController.m in Sources */,
 				80AF61551EC997BF0064B4F8 /* CardManagerDetailModel.m in Sources */,
 				12B522181EF63DC4004EBE8E /* DongManager.m in Sources */,
+				80AC8232205D1CDE00AE57FF /* LoadModel.m in Sources */,
 				8063A2051ECEA15400EEB74D /* LoadInfoViewController.m in Sources */,
 				1276FDEF1E8B541200026B05 /* KKTools.m in Sources */,
 				12ACA8FB1E8B4DA800AF74FC /* AdvisoryController.m in Sources */,
 				12A508F91EF15A750073E2EC /* TransTools.m in Sources */,
+				805C5BFE205BC6B800A8DBD1 /* CarLoanController.m in Sources */,
 				126908F91EF18167007B7C5C /* AdvisoryBtn.m in Sources */,
 				12A509121EF15A750073E2EC /* NSDate+WQCalendarLogic.m in Sources */,
 				80C3AA9F1EFA4B18001AF07F /* HelpCell.m in Sources */,
@@ -5740,6 +5832,7 @@
 				12BFDEC21E9B608F00B1BD79 /* CardManualCell.m in Sources */,
 				12509D081EA1AE34004F939F /* PhotoView.m in Sources */,
 				80AB819D1EF10244004B5C72 /* RewardListModel.m in Sources */,
+				80AC8233205D1CDE00AE57FF /* LoadRequestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

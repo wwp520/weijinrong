@@ -10,6 +10,10 @@
 
 #pragma mark - 声明
 @interface KKManager : NSObject
+// 平安普惠
++ (void)PinganNow:(NSDictionary *)params
+          success:(SuccessBlock)success
+             fail:(AFNErrorBlock)fail;
 
 // 登录
 + (void)login:(NSDictionary *)params

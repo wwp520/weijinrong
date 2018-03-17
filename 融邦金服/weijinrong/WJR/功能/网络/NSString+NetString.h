@@ -51,6 +51,8 @@
 + (NSString *)getMoneyDetail_URL;
 // 提款
 + (NSString *)getMoneyNow_URL ;
+// 平安普惠
++ (NSString *)getPinganNow_URL ;
 // 信用卡
 + (NSString *)getCredit_url;
 // 信用卡详情

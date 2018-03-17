@@ -10,8 +10,8 @@
 #import "ZYPTCell.h"
 #import "ZYWebController.h"
 #import "ZYDKController.h"
-//#import "LoanController.h"
-#import "LoanFinController.h"
+#import "LoanController.h"
+
 
 @interface ZYTable2 ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSArray *titleArray;
@@ -80,11 +80,11 @@
         VC.navTitle = @"平安普惠";
         VC.url = @"http://c.msxf.com/80008068-2-1";  //页面未找到,先跳链接
         [self.viewController.navigationController pushViewController:VC animated:YES];
-        
+        */
             LoanController *otherVC = [[LoanController alloc]init];
             otherVC.navTitle = @"我要贷款";
             [self.viewController.navigationController pushViewController:otherVC animated:YES];
-        */
+        
     }else if(indexPath.row == 3){  //你我贷
         ZYDKController * VC = [[ZYDKController alloc]init];
         VC.navTitle = @"你我贷";

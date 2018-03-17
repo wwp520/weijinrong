@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface DongManager : NSObject
+// 平安普惠
++ (void)PinganNow:(NSDictionary *)params
+          success:(SuccessBlock)success
+             fail:(AFNErrorBlock)fail;
 
 // 登录
 + (void)login:(NSDictionary *)params

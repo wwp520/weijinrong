@@ -12,6 +12,33 @@
 #pragma mark - 实现
 @implementation KKManager
 
+// 平安普惠
++ (void)PinganNow:(NSDictionary *)params
+          success:(SuccessBlock)success
+             fail:(AFNErrorBlock)fail {
+    
+    NSString *oldParam = [NSString stringWithFormat:@"requestData=%@",({
+        NSString *str = [KKTools dictionaryToJson:params];
+        [KKTools encryptionJsonString:str];
+    })];
+    NSDictionary *params2 = [[NSDictionary alloc] initWithObjectsAndKeys:
+                             GetAccount, @"userName",
+                             @"loan/loanOrder",@"url",
+                             oldParam,@"inParam",nil];
+    NSDictionary *newParam = @{@"param":params2};
+    
+    [AFNManager GET:[NSString getPinganNow_URL] param:[NSString getRequestparamWithDict:params] success:^(id requestData) {
+        if (success) {
+            success(requestData);
+        }
+    } fail:^(NSError *error) {
+        if (fail) {
+            fail(error);
+        }
+    } progress:nil];
+}
+
+
 // 登录
 + (void)login:(NSDictionary *)params
       success:(SuccessBlock)success
@@ -331,6 +358,7 @@
         }
     } progress:nil];
 }
+
 
 
 
