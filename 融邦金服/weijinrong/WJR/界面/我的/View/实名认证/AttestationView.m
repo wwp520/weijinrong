@@ -16,10 +16,11 @@
 #import "PhotoView.h"
 #import "ZYHImageCompression.h"
 #import "UIImage+ExitUIImage.h"
+#import "CreditUsedViewController.h"
 
 
 #pragma mark 声明
-@interface AttestationView ()<UITextFieldDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,UIActionSheetDelegate>
+@interface AttestationView ()<UITextFieldDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
    UIButton *_selectBtn;
 }
@@ -93,8 +94,70 @@
 //拍照上传
 - (IBAction)uploadBtn:(id)sender {
     _selectBtn = sender;
-    [self takePhoto];
+    
+    UIActionSheet *sheet1 = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册",nil];
+    sheet1.tag = 1;
+    [sheet1 showInView:self];
+
 }
+
+/*
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {//打开相机
+        [self openCamera];
+    }else if (buttonIndex == 1){//系统相册
+        [self openPhotoLibrary];
+    }
+}
+ */
+
+#pragma mark--调用相机和相册
+
+/**
+ *  调用照相机
+ */
+
+- (void)openCamera{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    //判断是否可以打开照相机
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        //摄像头
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        [self.viewController presentViewController:picker animated:NO completion:^{
+            // 改变状态栏的颜色  为正常  这是这个独有的地方需要处理的
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+        }];
+    }
+    else{
+        NSLog(@"没有摄像头");
+    }
+}
+
+/**
+ *  打开相册
+ */
+
+-(void)openPhotoLibrary{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.navigationBar.translucent = NO;　　//这句话设置导航栏不透明(!!!!!!!!!!!  解决问题)
+        [imagePicker.navigationBar setBarTintColor:[UIColor colorWithRed:25/255.0 green:109/255.0 blue:242/255.0 alpha:1]];
+        imagePicker.delegate = self;
+        [self.viewController presentViewController:imagePicker animated:YES completion:^{
+            // 改变状态栏的颜色  为正常  这是这个独有的地方需要处理的
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+            NSLog(@"打开相册");
+        }];
+    }else{
+        NSLog(@"不能打开相册");
+    }
+    
+}
+
+
 
 #pragma mark 网络请求
 //上传图片
@@ -301,7 +364,16 @@
         [weakVc hiddenHudLoadingView];
         BaseModel *model = [BaseModel decryptBecomeModel:requestData];
         if (model.retCode == 0) {
-            [self.viewController.navigationController popToRootViewControllerAnimated:YES];
+           // [self.viewController.navigationController popToRootViewControllerAnimated:YES];
+            
+            if (self.index == 1) {  //返回个人
+                MineController * mineVC = [[MineController alloc]init];
+                [self.viewController.navigationController popToViewController:mineVC animated:YES];
+            }else if(self.index == 2){  //返回信用卡分享
+                CreditUsedViewController * VC = [[CreditUsedViewController alloc]init];
+                [self.viewController.navigationController popToViewController:VC animated:YES];
+            }
+            
             /*
             ResultsViewController * rvc=[[ResultsViewController alloc]init];
             rvc.nameStr = self.name.text;
@@ -323,6 +395,7 @@
 - (IBAction)tapG:(UITapGestureRecognizer *)sender {
     [self endEditing:YES];
 }
+
 
 - (IBAction)nextClick:(UIButton *)sender {
     [self changeImage];
@@ -382,7 +455,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [_business resignFirstResponder];
             [_name     resignFirstResponder];
-            [_idCard   resignFirstResponder];
+            [_idCard resignFirstResponder];
             [_bank     resignFirstResponder];
             [_bankCard resignFirstResponder];
         });
@@ -396,6 +469,9 @@
 
 // 选择省市
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (actionSheet.tag != 1) {
+        
     [UIView animateWithDuration:.2f animations:^{
         _shadow.alpha = 0;
     }completion:^(BOOL finished) {
@@ -408,12 +484,24 @@
     }else {
         NSLog(@"Select");
         TSLocateView *locateView = (TSLocateView *)actionSheet;
+        locateView.tag = 2;
         TSLocation *location = locateView.locate;
         self.city.text = [NSString stringWithFormat:@"%@%@",location.state,location.city];
         self.province_id = location.province_id;
         self.city_id = location.city_id;
     }
     [_city endEditing:YES];
+    
+    }else{
+    
+         if (buttonIndex == 0) {//打开相机
+         [self openCamera];
+         }else if (buttonIndex == 1){//系统相册
+         [self openPhotoLibrary];
+         }
+
+    }
+
 }
 
 // 选择银行

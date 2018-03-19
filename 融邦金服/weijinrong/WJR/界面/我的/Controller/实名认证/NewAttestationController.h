@@ -10,6 +10,8 @@
 
 @interface NewAttestationController : BaseViewController
 
+@property (nonatomic,assign) NSInteger index;
+
 @property(nonatomic,strong) NSString *flag;
 
 @property (nonatomic, assign) NSInteger hiddenBar;//5的话不隐藏

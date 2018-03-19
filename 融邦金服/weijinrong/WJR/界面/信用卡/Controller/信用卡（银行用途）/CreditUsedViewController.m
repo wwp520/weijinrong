@@ -77,10 +77,6 @@
     [self getTopCellInfo];
     [self.view bringSubviewToFront:_headerView];
     
-    HomeBtn *homeBtn = [HomeBtn initWithTitle:@"分享" icon:nil];
-    UIButton *btn = (UIButton *)homeBtn.customView;
-    self.navigationItem.rightBarButtonItem = homeBtn;
-    [btn addTarget:self action:@selector(DrawBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     // 是否点击具体某张卡进来的
     if (_cardTypeModel) {
@@ -97,10 +93,9 @@
         UserModel *model = [UserModel decryptBecomeModel:requestData];
         if (model.retCode == 0) {
             //认证过
-            
             if([model.mercSts isEqualToString:@"10"]){ //未认证
                 _status = @"未认证";
-            }else {//已认证
+            }else if([model.mercSts isEqualToString:@"30"]){//已认证
                 _status = @"已认证";
             }
         }else {
@@ -117,6 +112,7 @@
     if ([_status isEqualToString:@"未认证"]) {
         NewAttestationController * newVC = [[NewAttestationController alloc]init];
         newVC.flag = @"0";
+        newVC.index = 2;
         [self.navigationController pushViewController:newVC animated:YES];
     }else{
          CodeLinkController * shareVC = [[CodeLinkController alloc]init];
@@ -132,6 +128,12 @@
     [self listTable];
     [self tableView];
     [self setupRefresh];
+    
+    HomeBtn *homeBtn = [HomeBtn initWithTitle:@"分享" icon:nil];
+    UIButton *btn = (UIButton *)homeBtn.customView;
+    self.navigationItem.rightBarButtonItem = homeBtn;
+    [btn addTarget:self action:@selector(DrawBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 
@@ -335,6 +337,7 @@
 - (void)shareBtn:(UIButton *)btn{
     if ([_status isEqualToString:@"未认证"]) {
         NewAttestationController * newVC = [[NewAttestationController alloc]init];
+        newVC.index = 2;
         newVC.flag = @"0";
         [self.navigationController pushViewController:newVC animated:YES];
     }else{

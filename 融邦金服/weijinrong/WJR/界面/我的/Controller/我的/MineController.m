@@ -29,6 +29,7 @@
 @interface MineController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIActionSheetDelegate>
 {
     UIButton * _selectBtn;
+    BOOL _isFirst;
 }
 @property (nonatomic, strong) MineTable *table;
 @property (nonatomic, strong) MineHeader *header;
@@ -48,7 +49,7 @@
 #pragma mark 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _isFirst = YES;
     _header.iconBtn.layer.masksToBounds = YES;
     _header.iconBtn.layer.cornerRadius = 55;
    
@@ -65,6 +66,7 @@
     [super viewDidAppear:animated];
     _header.iconBtn.layer.masksToBounds = YES;
     _header.iconBtn.layer.cornerRadius = 55;
+    
     [self changeLoginStatus];
     if ([KKStaticParams sharedKKStaticParams].currentLogin == YES) {
         [self getUserStatus];
@@ -73,6 +75,7 @@
         [self pushLoginVc:^{
             // 登陆成功
             [self getUserStatus];
+           // _isFirst = NO;
         }close:^{
             //首页
             [self.navigationController.tabBarController setSelectedIndex:0];
@@ -80,16 +83,6 @@
     }
 }
 
-//拍照上传头像
-- (void)iconBtnClick:(UIButton *)btn{
-    _selectBtn = btn;
-
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册",nil];
-    [sheet showInView:self.view];
-
-    
-   // [self takePhoto];
-}
 
 #pragma mark 不用看的
 - (PhotoView *)photoView{
@@ -150,19 +143,6 @@
         arrayM;
     });
     
-    //图片上传
-    //    NSString * oldParam = [NSString stringWithFormat:@"requestData=%@",({
-    //        NSString *str = [KKTools dictionaryToJson:params];
-    //        [KKTools encryptionJsonString:str];
-    //    })];
-    //    NSDictionary *params2 = [[NSDictionary alloc] initWithObjectsAndKeys:
-    //                            GetAccount, @"userName",
-    //                             @"upload1",@"url",
-    //                             [SaveManager getStringForKey:@"token"],@"token",
-    //                             [SaveManager getStringForKey:@"session"],@"session",
-    //                             oldParam,@"inParam",nil];
-    //    NSDictionary *newParam = @{@"param":params2};
-    
     
     [KKManager upload:params images:arrayM success:^(id requestData) {
         // 隐藏
@@ -198,6 +178,15 @@
 }
 
 
+//拍照上传头像
+- (void)iconBtnClick:(UIButton *)btn{
+    _selectBtn = btn;
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册",nil];
+    [sheet showInView:self.view];
+    
+}
+
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {//打开相机
@@ -206,6 +195,8 @@
         [self openPhotoLibrary];
     }
 }
+
+#pragma mark--调用相机和相册
 
 /**
  *  调用照相机
@@ -251,35 +242,68 @@
     
 }
 
+
+#pragma mark--相机相册完成回调
 #pragma mark - UIImagePickerControllerDelegate
-// 拍照完成回调
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0){
-    if(picker.sourceType == UIImagePickerControllerSourceTypeCamera){
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-       
-        if(!image){
-            [_header.iconBtn setBackgroundImage:[UIImage imageNamed:@"个人头像.png"] forState:UIControlStateNormal];
-        }else{
-            [_header.iconBtn setBackgroundImage:image forState:UIControlStateNormal];
+//进入拍摄页面点击取消按钮
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    //关闭相册界面
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    //当选择的类型是图片
+    if ([type isEqualToString:@"public.image"]){
+        //先把图片转成NSData
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        CGSize size = [ZYHImageCompression get_ImageCompressionProportion:image];
+        image = [image imageByScalingAndCroppingForSize:size];
+        
+        NSData *data;
+        if (UIImagePNGRepresentation(image) == nil) {
+            data = UIImageJPEGRepresentation(image, 0.25);
+        }
+        else {
+            data = UIImagePNGRepresentation(image);
+        }
+        //图片保存的路径
+        //这里将图片放在沙盒的documents文件夹中
+        NSString * DocumentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        //文件管理器
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+        [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+        [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:@"/image.png"] contents:data attributes:nil];
+        image = [Unity imageWithImageSimple:image scaledToSize:CGSizeMake(size.width, size.height)];
+        
+        [_header.iconBtn setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+        
+        //self.header.iconBtn.imageView.image = image;
+        [self changeImage];
+        
+        
+        if (_header.iconBtn.tag == 5000) {
+            [self.upDict setObject:image forKey:@"hand"];
         }
         
-        
-        [self changeImage];
-    
-        [picker dismissViewControllerAnimated:NO completion:^{
-            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-        }];
-    });
+        /*
+         _photoImage.image = [UIImage imageWithData:data];
+         _photo2Image.alpha = 0;
+         
+         //显示和隐藏
+         UIImageView *selectView = (UIImageView *)[self viewWithTag:10000 + _selectBtn.tag - 5000];
+         selectView.image = [UIImage imageWithData:data];
+         UIImageView *normalView = (UIImageView *)[self viewWithTag:10000 + _selectBtn.tag - 5000];
+         normalView.alpha = 0;
+         */
+    }
 }
 
-
-//进入拍摄页面点击取消按钮
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+/***************************************************************/
 
 
 - (void)changeLoginStatus {
@@ -324,7 +348,7 @@
 }
 
 // 获取用户状态
-- (void)getUserStatus {
+- (void)getUserStatus{
     
     [DongManager getUserStatus:^(id requestData) {
         UserModel *model = [UserModel decryptBecomeModel:requestData];
@@ -338,7 +362,13 @@
             }else {//认证
                     [_header.statusBtn setImage:[UIImage imageNamed:@"已认证"] forState:UIControlStateNormal];
                 
-                [_header.iconBtn sd_setImageWithURL:[NSURL URLWithString:model.url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"个人头像.png"]];
+                //如果是第一次登陆,去更改,否则不更改
+                if (_isFirst == YES) {
+                    [_header.iconBtn sd_setImageWithURL:[NSURL URLWithString:model.url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"个人头像.png"]];
+                    _isFirst=NO;
+                }else{
+                   
+                }
                  [_header.iconBtn addTarget:self action:@selector(iconBtnClick:) forControlEvents:UIControlEventTouchUpInside];
             }
         }else {
@@ -352,6 +382,7 @@
 //如果是未认证,跳转至实名认证
 - (void)StatusBtnClick:(UIButton *)btn{
     NewAttestationController * newVC = [[NewAttestationController alloc]init];
+    newVC.index = 1;
     [self.navigationController pushViewController:newVC animated:YES];
 }
 
@@ -380,6 +411,9 @@
                     [DongManager logout:params success:^(id requestData) {
                         [self hiddenHudLoadingView];
                         _model = [LoginModel decryptBecomeModel:requestData];
+                        //退出登录后,头像变成默认图片吗,isFirst置为yes
+                        [_header.iconBtn setImage:[UIImage imageNamed:@"个人头像.png"] forState:UIControlStateNormal];
+                        _isFirst = YES;
                         AutoLogin(@"0");
                         [LinkPaySDK linkPaySdkLogOut];
                         [KKStaticParams sharedKKStaticParams].currentLogin = NO;
@@ -395,95 +429,6 @@
     return _footer;
 }
 
-
-
-#pragma mark UIImagePickerControllerDelegate
-// 打开照相机
-- (void)takePhoto {
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        return;
-    }
-    if (self.presentedViewController) {
-        return;
-    }
-    //    [[[UIApplication sharedApplication].windows objectAtIndex:1] makeKeyAndVisible];
-    UIImagePickerController* picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing= NO;
-    picker.view.backgroundColor = [UIColor blackColor];
-    picker.sourceType =	sourceType;//		UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-// 打开本地相册
-- (void)localPhoto {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.delegate = self;
-    //设置选择后的图片可被编辑
-    picker.allowsEditing = YES;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-/*
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    NSLog(@"您取消了选择图片");
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
- */
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    //关闭相册界面
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
-    
-    //当选择的类型是图片
-    if ([type isEqualToString:@"public.image"]){
-        //先把图片转成NSData
-        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-        CGSize size = [ZYHImageCompression get_ImageCompressionProportion:image];
-        image = [image imageByScalingAndCroppingForSize:size];
-        
-        NSData *data;
-        if (UIImagePNGRepresentation(image) == nil) {
-            data = UIImageJPEGRepresentation(image, 0.25);
-        }
-        else {
-            data = UIImagePNGRepresentation(image);
-        }
-        //图片保存的路径
-        //这里将图片放在沙盒的documents文件夹中
-        NSString * DocumentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-        //文件管理器
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
-        [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
-        [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:@"/image.png"] contents:data attributes:nil];
-        image = [Unity imageWithImageSimple:image scaledToSize:CGSizeMake(size.width, size.height)];
-        
-        [_header.iconBtn setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
-        
-        //self.header.iconBtn.imageView.image = image;
-        [self changeImage];
-        
-        
-        if (_header.iconBtn.tag == 5000) {
-            [self.upDict setObject:image forKey:@"hand"];
-        }
-        
-        /*
-        _photoImage.image = [UIImage imageWithData:data];
-        _photo2Image.alpha = 0;
-        
-         //显示和隐藏
-         UIImageView *selectView = (UIImageView *)[self viewWithTag:10000 + _selectBtn.tag - 5000];
-         selectView.image = [UIImage imageWithData:data];
-         UIImageView *normalView = (UIImageView *)[self viewWithTag:10000 + _selectBtn.tag - 5000];
-         normalView.alpha = 0;
-         */
-    }
-}
 
 
 

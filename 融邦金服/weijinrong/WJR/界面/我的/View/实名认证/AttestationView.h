@@ -22,6 +22,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *city;
 @property (strong, nonatomic) IBOutlet UITextField *bankCard;
 
+
+@property (nonatomic,assign) NSInteger index;
+
 @property (nonatomic, strong) NSString *mobilephone;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *bankCode;

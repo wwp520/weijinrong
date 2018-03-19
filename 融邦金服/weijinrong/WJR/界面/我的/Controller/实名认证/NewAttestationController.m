@@ -52,6 +52,7 @@
 - (AttestationView *)attestation {
     if (!_attestation) {  //self.scroll.bounds
          _attestation = [AttestationView initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 64)];
+        _attestation.index = self.index;
         if (_isRegister == 5) {
             _attestation.mobilephone = _mobilephone;
             _attestation.password = _password;
