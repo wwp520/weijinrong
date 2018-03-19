@@ -133,7 +133,6 @@
     UIButton *btn = (UIButton *)homeBtn.customView;
     self.navigationItem.rightBarButtonItem = homeBtn;
     [btn addTarget:self action:@selector(DrawBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-
 }
 
 

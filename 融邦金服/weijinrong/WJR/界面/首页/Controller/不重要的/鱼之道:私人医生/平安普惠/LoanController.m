@@ -72,7 +72,7 @@
 - (void)showUI {
     self.tableview = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableview.y = 0;
-    self.tableview.height = ScreenHeight ;
+    self.tableview.height = ScreenHeight;
     self.tableview.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
