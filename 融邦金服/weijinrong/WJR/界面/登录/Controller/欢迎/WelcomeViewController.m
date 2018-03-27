@@ -53,7 +53,7 @@
     }
     else{
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-        imageView.image=[UIImage imageNamed:@"闪屏"];
+        imageView.image=[UIImage imageNamed:@"Retina 4"];
         [self.view addSubview:imageView];
         [self poseView];
     }
