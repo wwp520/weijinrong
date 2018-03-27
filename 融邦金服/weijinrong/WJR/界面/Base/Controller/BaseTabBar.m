@@ -42,7 +42,7 @@
     
     // 设置其他UITabBarButton的frame
     CGFloat buttonY = 0;
-    CGFloat buttonW = width / 3;
+    CGFloat buttonW = width / 2;
     CGFloat buttonH = height;
     NSInteger index = 0;
     for (UIView *button in self.subviews) {

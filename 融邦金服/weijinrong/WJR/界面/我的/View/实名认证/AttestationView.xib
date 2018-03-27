@@ -65,7 +65,7 @@
                         <outlet property="delegate" destination="u6O-nM-mp7" id="EjL-Ef-mpH"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请选择头像照片" borderStyle="roundedRect" placeholder="请选择头像照片" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lE3-J2-myv">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请选择头像照片" borderStyle="roundedRect" placeholder="请选择头像照片" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lE3-J2-myv">
                     <rect key="frame" x="20" y="355" width="306" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="BHu-Q8-HeA"/>

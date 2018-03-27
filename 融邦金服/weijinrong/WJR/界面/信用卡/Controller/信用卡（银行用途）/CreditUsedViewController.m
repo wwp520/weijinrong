@@ -62,6 +62,11 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self getUserStatus];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self getUserStatus];
@@ -73,8 +78,9 @@
     curPage = 1;
     [self setNavTitle:@"信用卡"];
     [self.view setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
-    [self createUI];
+    [self getUserStatus];
     [self getTopCellInfo];
+    [self createUI];
     [self.view bringSubviewToFront:_headerView];
     
     
@@ -88,16 +94,19 @@
 
 // 获取用户状态
 - (void)getUserStatus {
-    
+    //[self showHudLoadingView:@"正在加载..."];
+    [self showTitle:@"正在加载" delay:2.f];
     [DongManager getUserStatus:^(id requestData) {
         UserModel *model = [UserModel decryptBecomeModel:requestData];
         if (model.retCode == 0) {
+            [self hiddenHudLoadingView];
             //认证过
             if([model.mercSts isEqualToString:@"10"]){ //未认证
                 _status = @"未认证";
             }else if([model.mercSts isEqualToString:@"30"]){//已认证
                 _status = @"已认证";
             }
+
         }else {
             [self showNetFail];
         }
@@ -315,6 +324,7 @@
         
         
         [cell.shareBtn addTarget:self action:@selector(shareBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.applyBtn addTarget:self action:@selector(applyBtn:) forControlEvents:UIControlEventTouchUpInside];
     }
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -322,15 +332,6 @@
     return cell;
 }
 
-/*
-//立即申请
-- (void)applyBtn:(UIButton *)btn{
-    CardLinkController * cardVC = [[CardLinkController alloc]init];
-    cardVC.model = _bflistModel;
-    cardVC.openUrl = _bflistModel.content;
-    [self.navigationController pushViewController:cardVC animated:YES];
-}
- */
 
 //分享
 - (void)shareBtn:(UIButton *)btn{
@@ -345,6 +346,27 @@
         [self.navigationController pushViewController:shareVC animated:YES];
     }
 }
+
+
+//立即申请
+- (void)applyBtn:(UIButton *)btn{
+
+    CardBenifitListModel *model = self.dataArray[btn.tag];
+    if ([_status isEqualToString:@"未认证"]) {
+        NewAttestationController * newVC = [[NewAttestationController alloc]init];
+        newVC.index = 2;
+        newVC.flag = @"0";
+        [self.navigationController pushViewController:newVC animated:YES];
+    }else{
+        CardLinkController * cardVC = [[CardLinkController alloc]init];
+        cardVC.model = model;
+        cardVC.openUrl = model.content;
+        [self.navigationController pushViewController:cardVC animated:YES];
+    }
+    
+}
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 90;

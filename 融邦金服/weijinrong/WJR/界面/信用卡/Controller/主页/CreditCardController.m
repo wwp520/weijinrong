@@ -38,10 +38,12 @@
     [super viewDidLoad];
     [self collection];
     [self setNavTitle:@"信用卡"];
+    /*
     HomeBtn *homeBtn = [HomeBtn initWithTitle:@"赚红包" icon:nil];
     UIButton *btn = (UIButton *)homeBtn.customView;
     self.navigationItem.rightBarButtonItem = homeBtn;
     [btn addTarget:self action:@selector(DrawBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+     */
 }
 
 //推荐码

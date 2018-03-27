@@ -30,6 +30,7 @@ static SaveManager *manager;
 // 存值
 + (void)saveString:(NSString *)str forKey:(NSString *)key {
     [[NSUserDefaults standardUserDefaults] setObject:str forKey:key];
+    //[[NSUserDefaults standardUserDefaults] setValue:str forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 // 取值

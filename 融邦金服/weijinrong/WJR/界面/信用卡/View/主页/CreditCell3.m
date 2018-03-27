@@ -18,6 +18,7 @@
 //    ApplicationViewController * appVC = [[ApplicationViewController alloc]init];
 //    appVC.model = _model;
 //    [self.viewController.navigationController  pushViewController:appVC animated:YES];
+  
     CardLinkController *cardVC = [[CardLinkController alloc]init];
     cardVC.model = _model;
     cardVC.openUrl = _model.content;

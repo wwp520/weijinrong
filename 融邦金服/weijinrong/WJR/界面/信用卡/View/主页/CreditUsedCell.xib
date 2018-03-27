@@ -68,9 +68,6 @@
                         <state key="normal" title="立即申请">
                             <color key="titleColor" red="1" green="0.28412271639999997" blue="0.1889438779" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
-                        <connections>
-                            <action selector="applyBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XR0-BA-l1T"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZo-UJ-LG8">
                         <rect key="frame" x="346" y="53" width="69" height="30"/>

@@ -37,6 +37,7 @@
 @property (nonatomic, strong) NewSetModel *model;
 @property (nonatomic,strong) PhotoView *photoView;
 @property (nonatomic, strong) NSMutableDictionary *upDict;//上传的图片
+@property (nonatomic, strong)  UserModel *usermodel;
 
 //等待框
 @property (nonatomic,retain) UIProgressView * prog;
@@ -177,16 +178,46 @@
     }];
 }
 
+// 获取用户状态
+- (void)getUserStatus{
+    
+    [DongManager getUserStatus:^(id requestData) {
+      UserModel * model = [UserModel decryptBecomeModel:requestData];
+        if (model.retCode == 0) {
+            //未认证
+           // model.mercSts = @"10";
+            if([model.mercSts isEqualToString:@"10"]){ //未认证
+                [_header.statusBtn setImage:[UIImage imageNamed:@"未认证.png"] forState:UIControlStateNormal];
+                [_header.statusBtn addTarget:self action:@selector(StatusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+                
+                
+            }else {//认证
+                [_header.statusBtn setImage:[UIImage imageNamed:@"已认证"] forState:UIControlStateNormal];
+                
+                //如果是第一次登陆,去更改,否则不更改
+                if (_isFirst == YES) {
+                    [_header.iconBtn sd_setImageWithURL:[NSURL URLWithString:model.url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"个人头像.png"]];
+                    _isFirst = NO;
+                }else{
+                    
+                }
+                [_header.iconBtn addTarget:self action:@selector(iconBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+            }
+        }else {
+            [self showNetFail];
+        }
+    } fail:^(NSError *error) {
+        [self showNetFail];
+    }];
+}
 
 //拍照上传头像
 - (void)iconBtnClick:(UIButton *)btn{
-    _selectBtn = btn;
-    
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册",nil];
-    [sheet showInView:self.view];
-    
-}
 
+        _selectBtn = btn;
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册",nil];
+        [sheet showInView:self.view];
+}
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {//打开相机
@@ -347,37 +378,6 @@
     return _header;
 }
 
-// 获取用户状态
-- (void)getUserStatus{
-    
-    [DongManager getUserStatus:^(id requestData) {
-        UserModel *model = [UserModel decryptBecomeModel:requestData];
-        if (model.retCode == 0) {
-            //认证过
-          //  model.mercSts = @"10";
-            if([model.mercSts isEqualToString:@"10"]){ //未认证
-                [_header.statusBtn setImage:[UIImage imageNamed:@"未认证.png"] forState:UIControlStateNormal];
-                [_header.statusBtn addTarget:self action:@selector(StatusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-                
-            }else {//认证
-                    [_header.statusBtn setImage:[UIImage imageNamed:@"已认证"] forState:UIControlStateNormal];
-                
-                //如果是第一次登陆,去更改,否则不更改
-                if (_isFirst == YES) {
-                    [_header.iconBtn sd_setImageWithURL:[NSURL URLWithString:model.url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"个人头像.png"]];
-                    _isFirst=NO;
-                }else{
-                   
-                }
-                 [_header.iconBtn addTarget:self action:@selector(iconBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            }
-        }else {
-            [self showNetFail];
-        }
-    } fail:^(NSError *error) {
-        [self showNetFail];
-    }];
-}
 
 //如果是未认证,跳转至实名认证
 - (void)StatusBtnClick:(UIButton *)btn{

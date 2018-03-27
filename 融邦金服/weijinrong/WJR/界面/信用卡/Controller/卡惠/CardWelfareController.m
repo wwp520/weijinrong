@@ -10,6 +10,7 @@
 #import "CardWelfareTable.h"
 #import "HomeLocation.h"
 #import "HomeBtn.h"
+#import "UserModel.h"
 #import "CardWelfareModel.h"
 #import "BaseViewController.h"
 
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) HomeLocation *location;
 @property (nonatomic, strong) CardWelfareModel * model;
 @property (nonatomic, strong) NSMutableArray<CardWelfareListModel*> * dataArray;
+
 @end
 
 #pragma mark - 实现
@@ -116,6 +118,7 @@
 }
 
 
+//定位
 - (HomeLocation *)location {
     if (!_location) {
         _location = [HomeLocation sharedHomeLocation:^(NSString *city, NSString *address) {
@@ -126,6 +129,7 @@
     }
     return _location;
 }
+
 
 #pragma mark - 内存警告
 - (void)didReceiveMemoryWarning {

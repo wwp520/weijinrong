@@ -161,6 +161,7 @@
         cell.body.text = _models.list[indexPath.row].body;
         cell.cardCount.text = [NSString  stringWithFormat:@"%@人",_models.list[indexPath.row].countCard];
         cell.model = _models.list[indexPath.row];
+      //  [cell.applyBtn addTarget:self action:@selector(applyBtn:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }else if (indexPath.section == 4) {
         if (indexPath.row % 6 <= 1) {
@@ -187,6 +188,14 @@
         return cell;
     }
 }
+
+- (void)applyBtn:(UIButton *)btn{
+    CardLinkController *cardVC = [[CardLinkController alloc]init];
+    cardVC.model = _listmodel;
+    cardVC.openUrl = _listmodel.content;
+    [self.viewController.navigationController pushViewController:cardVC animated:YES];
+}
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     // 头视图
     if([kind isEqualToString:UICollectionElementKindSectionHeader]) {

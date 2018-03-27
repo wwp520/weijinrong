@@ -80,7 +80,6 @@
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
-
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSource.count;
 }
@@ -121,4 +120,5 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
 @end

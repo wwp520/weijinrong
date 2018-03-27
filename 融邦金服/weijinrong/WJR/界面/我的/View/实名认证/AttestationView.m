@@ -207,8 +207,8 @@
     [KKManager upload:params images:arrayM success:^(id requestData) {
         // 隐藏
         [weakVc hiddenHudLoadingView];
-        // 解析
         
+        // 解析
         NSString *resStr   = [KKTools decryptJsonString:requestData];
         NSDictionary *dict = [KKTools dictionaryWithJsonString:resStr];
         PhotoModel *model  = [PhotoModel mj_objectWithKeyValues:dict];
@@ -366,14 +366,20 @@
         if (model.retCode == 0) {
            // [self.viewController.navigationController popToRootViewControllerAnimated:YES];
             
+            for (int i=0; i<self.viewController.navigationController.viewControllers.count; i++) {
+                
+                BaseViewController *vc = self.viewController.navigationController.viewControllers[i];
+                
             if (self.index == 1) {  //返回个人
-                MineController * mineVC = [[MineController alloc]init];
-                [self.viewController.navigationController popToViewController:mineVC animated:YES];
+                if ([vc isKindOfClass:[MineController class]]) {
+                    [self.viewController.navigationController popToViewController:vc animated:YES];
+                }
             }else if(self.index == 2){  //返回信用卡分享
-                CreditUsedViewController * VC = [[CreditUsedViewController alloc]init];
-                [self.viewController.navigationController popToViewController:VC animated:YES];
+                if ([vc isKindOfClass:[CreditUsedViewController class]]) {
+                    [self.viewController.navigationController popToViewController:vc animated:YES];
+                }
             }
-            
+         }
             /*
             ResultsViewController * rvc=[[ResultsViewController alloc]init];
             rvc.nameStr = self.name.text;

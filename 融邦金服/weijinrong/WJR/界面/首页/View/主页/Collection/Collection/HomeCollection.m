@@ -52,7 +52,7 @@
 #pragma mark 声明
 + (instancetype)initWithFrame:(CGRect)frame {
     HomeCollection *view = [[HomeCollection alloc] initWithFrame:frame];
-    if ([ShenHe sharedShenHe].isSh == YES) {
+    if ([ShenHe isShenHeDate] == YES) {
         [view shenHeView];
     }else{
         [view collection];

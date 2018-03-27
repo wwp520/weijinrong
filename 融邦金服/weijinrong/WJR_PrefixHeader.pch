@@ -27,7 +27,7 @@
 #import "Common.h"
 
 // 审核
-#define SHENHE_NUMBER @"1"      //当前审核: 1
+#define SHENHE_NUMBER @"2"      //当前审核: 1
 #define SHENHE_DATE 20180402    //预计审核通过时间
 
 

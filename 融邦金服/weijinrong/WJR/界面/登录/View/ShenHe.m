@@ -15,6 +15,18 @@ singleton_implementation(ShenHe)
     ShenHe *shen = [ShenHe sharedShenHe];
     shen.sh = YES;
 }
+- (BOOL)isSh {
+    NSString *shenhe = [SaveManager getStringForKey:@"shenhe"];
+    return [shenhe isEqualToString:@"1"];
+    
+    /**
+    NSString *phone = GetAccount;
+    if (!phone || [phone isEqualToString:@"15753099908"]) {
+        return YES;
+    }
+    return NO;
+    */
+}
 - (void)setModel:(LoginModel *)model {
     _sh = NO;
     // 是否在审核
@@ -56,7 +68,18 @@ singleton_implementation(ShenHe)
 
 // 是否在审核期内
 + (BOOL)isShenHeDate {
+    NSString *shenhe = [SaveManager getStringForKey:@"shenhe"];
+    return [shenhe isEqualToString:@"1"];
     
+    /**
+    NSString *phone = GetAccount;
+    if (!phone || [phone isEqualToString:@"15753099908"]) {
+        return YES;
+    }
+    return NO;
+     */
+    
+    /**
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
     // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
@@ -71,6 +94,7 @@ singleton_implementation(ShenHe)
     
     NSInteger nowtimeStr = [[formatter stringFromDate:datenow] integerValue];
     return nowtimeStr < SHENHE_DATE;
+     */
 }
 
 @end

@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *body;
 @property (weak, nonatomic) IBOutlet UILabel *cardCount;
 
+@property (weak, nonatomic) IBOutlet UIButton *applyBtn;
+
 @property(nonatomic,strong)CardBenifitListModel * model;
 @property (nonatomic, strong)NSString *ids;
 

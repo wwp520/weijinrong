@@ -28,14 +28,16 @@
 //"id":"6"
 
 
+/*
 //跳转到立即申请
 - (IBAction)applyBtn:(id)sender {
-
+   
     CardLinkController * cardVC = [[CardLinkController alloc]init];
     cardVC.model = _benifitModel;
     cardVC.openUrl = _benifitModel.content;
     [self.viewController.navigationController pushViewController:cardVC animated:YES];
 }
+ */
 
 
 - (void)setModel:(CardWelfareListModel *)model {

@@ -162,7 +162,10 @@
         [KKStaticParams sharedKKStaticParams].currentLogin = YES;
         [self dismissViewControllerAnimated:YES completion:^{
             if (_success) {
-                _success();
+                NSString *phone = (!GetAccount || [GetAccount isEqualToString:@"15753099908"]) ? @"1" : @"0";
+                [SaveManager saveString:phone forKey:@"shenhe"];
+                [KKTools becomeTabController];
+                // _success();
             }
         }];
         

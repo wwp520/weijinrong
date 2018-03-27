@@ -46,6 +46,10 @@
 @implementation HomeController
 
 
++ (void)load {
+    [SaveManager saveString:@"1" forKey:@"shenhe"];
+}
+
 #pragma mark 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,6 +68,9 @@
     [super viewDidAppear:animated];
     if (isAutoLogin && [KKStaticParams sharedKKStaticParams].currentLogin == NO) {
         LoginController *login = [[LoginController alloc] init];
+        login.success = ^() {
+            [KKTools becomeTabController];
+        };
         BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:login];
         [self.navigationController presentViewController:nav animated:YES completion:nil];
     }else if ([KKStaticParams sharedKKStaticParams].currentLogin == YES){
@@ -122,8 +129,8 @@
         [self netfail];
         _netfail.alpha = 1;
     }];
-    
 }
+
 // 通知列表
 - (void)getMessageList {
 //    [self showHudLoadingView:@"正在加载"];
@@ -321,9 +328,8 @@
     } fail:^(NSError *error) {
         [self showNetFail];
     }];
-    
-    
 }
+
 - (void)showAlert:(int)count {
     if (count == 1) {
         [self upgradePromptBox];
@@ -334,6 +340,7 @@
     [self.alert setTag:10000];
     [self.alert show];
 }
+
 // 升级提示框（强制）
 - (void)upgradePromptBox {
     UIView * maxView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
